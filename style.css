@@ -1246,3 +1246,60 @@
     max-width: 10ch;
   }
 }
+
+/* Hymn player (Luther chorales) */
+.hymn-player {
+  position: fixed;
+  right: max(14px, env(safe-area-inset-right, 0px));
+  bottom: max(14px, env(safe-area-inset-bottom, 0px));
+  z-index: 240;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(300px, calc(100vw - 28px));
+  padding: 6px 14px 6px 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-body);
+}
+.hymn-player-btn {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.hymn-player-btn:hover { background: var(--color-primary-hover); }
+.hymn-player-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; }
+.hymn-player-btn svg { width: 15px; height: 15px; fill: currentColor; }
+.hymn-player-btn .icon-pause { display: none; }
+.hymn-player.is-playing .icon-play { display: none; }
+.hymn-player.is-playing .icon-pause { display: block; }
+.hymn-player-meta { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.hymn-player-kicker {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.hymn-player-title {
+  font-size: 0.8rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 480px) {
+  .hymn-player { max-width: calc(100vw - 24px); }
+  .hymn-player-title { font-size: 0.74rem; }
+}

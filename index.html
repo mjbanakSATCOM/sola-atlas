@@ -783,5 +783,17 @@
 
 <script src="./solas.js" defer></script>
 <script src="./app.js" defer></script>
+<aside class="hymn-player" id="hymn-player" aria-label="Luther chorale background music">
+  <button type="button" class="hymn-player-btn" id="hymn-toggle" aria-pressed="false" aria-label="Play Luther hymn strings">
+    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+  </button>
+  <div class="hymn-player-meta">
+    <span class="hymn-player-kicker">Luther chorales</span>
+    <span class="hymn-player-title">Ein feste Burg ist unser Gott</span>
+  </div>
+  <audio id="hymn-audio" playsinline preload="none"></audio>
+</aside>
+<script src="./hymn-player.js" defer></script>
 </body>
 </html>
