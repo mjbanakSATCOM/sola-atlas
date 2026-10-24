@@ -60,6 +60,28 @@
     }
   });
 
+  // Start on the visitor's first interaction (browsers block true autoplay).
+  var firstEvents = ["pointerdown", "keydown", "touchstart"];
+  var armed = true;
+  function disarm() {
+    if (!armed) return;
+    armed = false;
+    firstEvents.forEach(function (ev) {
+      document.removeEventListener(ev, onFirstInteraction, true);
+    });
+  }
+  function onFirstInteraction(e) {
+    if (!armed) return;
+    disarm();
+    // Let the player button handle its own click so it doesn't toggle twice.
+    if (e.target && player.contains(e.target)) return;
+    if (audio.paused) playCurrent();
+  }
+  firstEvents.forEach(function (ev) {
+    document.addEventListener(ev, onFirstInteraction, { capture: true, passive: true });
+  });
+  btn.addEventListener("click", disarm);
+
   audio.addEventListener("ended", function () {
     advancing = true;
     loadTrack(index + 1);
