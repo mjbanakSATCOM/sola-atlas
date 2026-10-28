@@ -238,3 +238,9 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .hymn-tag{align-self:flex-start;font:600 .66rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--oxblood);color:var(--vellum)}
 .hymn-sung{background:var(--lapis)}.hymn-recommended{background:var(--verdigris)}
 .hymn-src{margin-top:auto;padding-top:8px;color:var(--oxblood);font-size:.88rem;text-decoration:none}.hymn-src:hover{text-decoration:underline}
+/* Scottish Reformation */
+.scot-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;margin-bottom:12px}
+.scot-steps{list-style:none;padding:0;margin:0;border-left:2px solid var(--brass)}.scot-steps li{padding:0 0 12px 20px;position:relative}.scot-steps li::before{content:"";position:absolute;left:-7px;top:.45em;width:12px;height:12px;border-radius:50%;background:var(--brass)}.scot-steps b{font-family:var(--f-mono);font-size:.85rem;color:var(--oxblood);margin-right:8px}
+.scot-h{font-family:var(--f-display);color:var(--oxblood);margin:40px 0 16px}
+.scot-places>div{background:var(--paper);border:1px solid var(--vellum-2)}.scot-places h4{color:var(--oxblood)}
+@media (max-width:980px){.scot-grid{grid-template-columns:1fr}}
