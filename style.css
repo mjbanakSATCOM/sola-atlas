@@ -188,3 +188,13 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
   .hymn-player-meta{display:none}.hymn-player{padding:6px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Section background art (Wikimedia Commons; see assets/CREDITS.md) */
+.sec[id]:not(.band){position:relative;isolation:isolate}
+.sec[id]:not(.band)::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(243,236,220,.90),rgba(243,236,220,.93)),var(--bg);background-size:cover;background-position:center;filter:sepia(.25)}
+.sec.alt[id]::before{background-image:linear-gradient(rgba(251,247,238,.91),rgba(251,247,238,.94)),var(--bg)}
+.sec.dark[id]::before{background-image:linear-gradient(rgba(35,57,91,.88),rgba(20,32,28,.92)),var(--bg)}
+@media (min-width:900px) and (hover:hover){.sec[id]:not(.band)::before{background-attachment:fixed}}
+#solas{--bg:url(assets/bg/bg-solas.jpg)}#confessions{--bg:url(assets/bg/bg-confessions.jpg)}#election{--bg:url(assets/bg/bg-election.jpg)}
+#era{--bg:url(assets/bg/bg-era.jpg)}#map{--bg:url(assets/bg/bg-map.jpg)}#people{--bg:url(assets/bg/bg-people.jpg)}
+#puritans{--bg:url(assets/bg/bg-puritans.jpg)}#shelf{--bg:url(assets/bg/bg-shelf.jpg)}#path{--bg:url(assets/bg/bg-path.jpg)}
