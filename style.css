@@ -32,6 +32,11 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .seal{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--oxblood);border:2px solid var(--brass);font-size:1rem}
 .nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
 .nav a{color:#d9d2bf;text-decoration:none;font-size:.88rem;padding:6px 10px;border-radius:8px;white-space:nowrap}.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.menu-btn{display:none;order:3;width:40px;height:40px;border:1px solid rgba(200,165,90,.45);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer;align-items:center;justify-content:center;padding:0}
+.menu-btn .bars,.menu-btn .bars::before,.menu-btn .bars::after{display:block;width:18px;height:2px;background:var(--vellum);border-radius:2px;position:relative;transition:transform .2s,background .2s}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0}.menu-btn .bars::before{top:-6px}.menu-btn .bars::after{top:6px}
+.menu-btn[aria-expanded="true"] .bars{background:transparent}.menu-btn[aria-expanded="true"] .bars::before{transform:translateY(6px) rotate(45deg)}.menu-btn[aria-expanded="true"] .bars::after{transform:translateY(-6px) rotate(-45deg)}
+.menu-btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .depth{display:flex;background:rgba(255,255,255,.08);border-radius:999px;padding:3px}
 .depth button{background:none;border:0;color:#cfc7b2;font:500 .78rem var(--f-mono);padding:6px 12px;border-radius:999px;cursor:pointer}
 .depth button[aria-checked="true"]{background:var(--brass);color:var(--ink)}
@@ -178,10 +183,15 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
   .conf-list{flex-direction:row;overflow-x:auto}.conf-list li{flex:0 0 auto}
   .cmp-grid{grid-template-columns:repeat(2,1fr)}.marks{grid-template-columns:1fr 1fr}.paths{grid-template-columns:1fr}
   .sola-tabs{grid-template-columns:repeat(5,minmax(140px,1fr));overflow-x:auto}
-  .nav{display:none}
+  .topbar{flex-wrap:wrap}.brand{flex:1}.depth{order:2}
+  .menu-btn{display:inline-flex}
+  .nav{display:none;order:4;flex:0 0 100%;flex-direction:column;gap:2px;padding:8px 0 12px;border-top:1px solid rgba(200,165,90,.3);max-height:calc(100vh - 70px);overflow-y:auto}
+  .nav.open{display:flex}
+  .nav a{font-size:1rem;padding:12px 14px;border-radius:10px}.nav a:active{background:rgba(200,165,90,.2)}
+  body.menu-open{overflow:hidden}
 }
 @media (max-width:620px){
-  body{font-size:17px}.topbar{padding:8px 14px}.depth button{padding:5px 8px}
+  body{font-size:17px}.topbar{padding:8px 12px;gap:8px}.brand{font-size:1rem;gap:7px;min-width:0}.menu-btn{width:36px;height:36px}.depth button{padding:5px 8px}
   .tl-card,.book-card{grid-template-columns:1fr}.cover{max-width:150px}
   .opts,.vs,.marks{grid-template-columns:1fr}
   .tick span{display:none}.tick.on span{display:inline}

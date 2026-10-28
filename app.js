@@ -125,3 +125,11 @@ m.addEventListener('click',e=>{if(e.target===m||e.target.closest('.doc-close'))c
 document.addEventListener('keydown',e=>{if(m.hidden)return;if(e.key==='Escape')close();
 if(e.key==='Tab'){const f=[...dlg.querySelectorAll('button,a[href]')];const a=f[0],z=f[f.length-1];
 if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}});})();
+
+(()=>{const b=document.querySelector('.menu-btn'),n=document.getElementById('site-nav');if(!b||!n)return;
+const set=o=>{n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.body.classList.toggle('menu-open',o);};
+b.addEventListener('click',e=>{e.stopPropagation();set(!n.classList.contains('open'));});
+n.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
+document.addEventListener('click',e=>{if(n.classList.contains('open')&&!n.contains(e.target)&&!b.contains(e.target))set(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&n.classList.contains('open')){set(false);b.focus();}});
+matchMedia('(min-width:981px)').addEventListener('change',m=>{if(m.matches)set(false);});})();
