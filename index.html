@@ -88,6 +88,22 @@
         <p class="small">Read: <a href="https://www.ccel.org/ccel/calvin/institutes" target="_blank" rel="noopener">Calvin's Institutes (CCEL)</a> · <a href="https://en.wikipedia.org/wiki/Supralapsarianism" target="_blank" rel="noopener">Supra- and infralapsarianism</a> · <a href="https://www.opc.org/wcf.html" target="_blank" rel="noopener">Westminster Confession (OPC)</a></p>
       </details>
     </div>
+    <div class="docs" aria-labelledby="docs-h">
+      <h3 id="docs-h">Download summaries</h3>
+      <p class="small">Two printable summaries on unconditional election.</p>
+      <div class="doc-grid">
+        <article class="doc-card">
+          <button type="button" class="doc-thumb" data-doc="exec" aria-label="Preview Unconditional Election — Executive Summary"><img src="assets/docs/election-executive-summary-preview.jpg" alt="First page of the Executive Summary" loading="lazy" width="300" height="388"></button>
+          <div class="doc-body"><h4>Unconditional Election — Executive Summary</h4><p class="small">20 pages · full printable summary (PDF)</p>
+          <div class="doc-actions"><a class="btn-doc primary" href="assets/docs/election-executive-summary.pdf" download>⬇ Download PDF</a><button type="button" class="btn-doc" data-doc="exec">Preview</button></div></div>
+        </article>
+        <article class="doc-card">
+          <button type="button" class="doc-thumb" data-doc="quick" aria-label="Preview Unconditional Election — Quick Hits"><img src="assets/docs/election-quick-hits-preview.jpg" alt="First page of the Quick Hits" loading="lazy" width="300" height="388"></button>
+          <div class="doc-body"><h4>Unconditional Election — Quick Hits</h4><p class="small">3 pages · short overview (PDF)</p>
+          <div class="doc-actions"><a class="btn-doc primary" href="assets/docs/election-quick-hits.pdf" download>⬇ Download PDF</a><button type="button" class="btn-doc" data-doc="quick">Preview</button></div></div>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -188,6 +204,13 @@
   <div class="hymn-player-meta"><span class="hymn-player-kicker">Luther chorales</span><span class="hymn-player-title">Ein feste Burg ist unser Gott</span></div>
   <audio id="hymn-audio" playsinline preload="none"></audio>
 </aside>
+<div class="doc-modal" id="docModal" role="dialog" aria-modal="true" aria-labelledby="docModalTitle" hidden>
+  <div class="doc-dialog" tabindex="-1">
+    <header><h3 id="docModalTitle"></h3><button type="button" class="doc-close" aria-label="Close preview">×</button></header>
+    <div class="doc-view"><object id="docObj" type="application/pdf" data=""><img id="docImg" src="" alt=""></object></div>
+    <footer><a class="btn-doc primary" id="docDl" href="" download>⬇ Download PDF</a><a class="btn-doc" id="docOpen" href="" target="_blank" rel="noopener">Open in new tab</a></footer>
+  </div>
+</div>
 <script src="./data.js" defer></script>
 <script src="./app.js" defer></script>
 <script src="./hymn-player.js" defer></script>

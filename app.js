@@ -108,3 +108,20 @@ renderQ();
 /* reveal */
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.08});$$(".head,.fade-in").forEach(function(x){x.classList.add("rv");io.observe(x)});}
 })();
+
+// Election PDF preview modal
+(()=>{const D={exec:{t:"Unconditional Election — Executive Summary",f:"assets/docs/election-executive-summary"},quick:{t:"Unconditional Election — Quick Hits",f:"assets/docs/election-quick-hits"}};
+const m=document.getElementById('docModal');if(!m)return;const dlg=m.querySelector('.doc-dialog');let last=null;
+const mobile=matchMedia('(max-width:700px)').matches;
+function open(k){const d=D[k];if(!d)return;last=document.activeElement;
+m.querySelector('#docModalTitle').textContent=d.t;const o=document.getElementById('docObj'),i=document.getElementById('docImg');
+i.src=d.f+'-preview.jpg';i.alt='First page of '+d.t;o.data=mobile?'':d.f+'.pdf#view=FitH';
+const n=o.cloneNode(true);o.replaceWith(n);
+document.getElementById('docDl').href=d.f+'.pdf';document.getElementById('docOpen').href=d.f+'.pdf';
+m.hidden=false;document.body.style.overflow='hidden';m.querySelector('.doc-close').focus();}
+function close(){m.hidden=true;document.body.style.overflow='';const o=document.getElementById('docObj');o.data='';last&&last.focus();}
+document.querySelectorAll('[data-doc]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.doc)));
+m.addEventListener('click',e=>{if(e.target===m||e.target.closest('.doc-close'))close();});
+document.addEventListener('keydown',e=>{if(m.hidden)return;if(e.key==='Escape')close();
+if(e.key==='Tab'){const f=[...dlg.querySelectorAll('button,a[href]')];const a=f[0],z=f[f.length-1];
+if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}});})();
