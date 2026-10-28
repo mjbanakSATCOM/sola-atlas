@@ -11,3 +11,7 @@ All recordings are from Wikimedia Commons, re-encoded to 256 kbps MP3 with gentl
 
 License texts: https://creativecommons.org/licenses/by-sa/4.0/ and https://creativecommons.org/licenses/by-sa/3.0/
 The re-encoded files are shared under the same licenses as their sources.
+
+## Portraits (assets/people/)
+
+Portraits of Wycliffe, Hus, Luther, Zwingli, Tyndale, Calvin, Knox, Perkins, Owen, Bunyan, Matthew Henry and Jonathan Edwards are resized copies of historic paintings and engravings from Wikimedia Commons (via each person's English Wikipedia article). The original works are in the public domain.
