@@ -63,7 +63,7 @@ Object.keys(S.places).forEach(function(k){var p=S.places[k],xy=p.ne?projN(p.lon,
   gg.addEventListener("click",function(){highlight(k,true)});gg.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();highlight(k,true)}});svg.appendChild(gg);});
 function highlight(k,showInfo){$$(".city",svg).forEach(function(c){c.classList.toggle("on",c.dataset.k===k)});var p=S.places[k];
   var evs=TL.map(function(e,i){return[e,i]}).filter(function(x){return x[0].place===k});
-  info.innerHTML='<p class="kicker">Place</p><h3>'+p.n+'</h3><p>'+p.note+'</p>'+(evs.length?'<p class="small">On the timeline:</p><ul class="tight">'+evs.map(function(x){return'<li><button class="linkbtn" data-tl="'+x[1]+'">'+x[0].y+' · '+x[0].t+'</button></li>'}).join("")+'</ul>':"");}
+  info.innerHTML='<p class="kicker">Place</p><h3>'+p.n+'</h3><p>'+p.note+'</p>'+(p.img?'<img class="place-photo" src="'+p.img+'" alt="'+p.n+'" loading="lazy" width="1200" height="800">':'')+(evs.length?'<p class="small">On the timeline:</p><ul class="tight">'+evs.map(function(x){return'<li><button class="linkbtn" data-tl="'+x[1]+'">'+x[0].y+' · '+x[0].t+'</button></li>'}).join("")+'</ul>':"");}
 info.addEventListener("click",function(e){var b=e.target.closest("[data-tl]");if(b){range.value=b.dataset.tl;showTL(+b.dataset.tl);$("#era").scrollIntoView({behavior:"smooth"});}});
 showTL(2);highlight("wittenberg",true);
 
