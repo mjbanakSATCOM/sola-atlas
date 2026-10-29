@@ -41,3 +41,5 @@ All from Wikimedia Commons, resized to 1200px wide.
 - `prague.jpg` — *Bethlehem Chapel front adjusted.jpg* — Bkwillwm — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Bethlehem_Chapel_front_adjusted.jpg
 - `boston.jpg` — *Old State House, Boston.jpg* — Marco Almbauer — Public domain — https://commons.wikimedia.org/wiki/File:Old_State_House,_Boston.jpg
 - `northampton.jpg` — *First Church, Main Street, Northampton, 2011.jpg* — chipmunk_1 — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File:First_Church,_Main_Street,_Northampton,_2011.jpg
+
+- `bg/bg-hymns-luther.jpg` — Martin Luther, *Ein feste Burg ist unser Gott*, in Johann Spangenberg's Gesangbuch, Magdeburg 1545. Public domain. https://commons.wikimedia.org/wiki/File:Ein_feste_Burg_1545.jpg
