@@ -1,7 +1,8 @@
 /* Reformed Atlas – walkable 3D gallery hall for #people. Uses S.people only. */
 (function(){
   var S=window.SOLA;if(!S||!S.people)return;
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return; // keep 2D flip-card grid
+  var mm=window.matchMedia;if(mm&&mm("(prefers-reduced-motion: reduce)").matches)return; // keep 2D flip-card grid
+  var C=window.CSS&&CSS.supports;if(!C||!(CSS.supports("transform-style","preserve-3d")||CSS.supports("-webkit-transform-style","preserve-3d"))||!CSS.supports("perspective","1px")){document.documentElement.classList.add("no-3d");return;} // weak 3D: keep 2D grid
   var grid=document.getElementById("people-grid");if(!grid)return;
   var era={wycliffe:"fore",hus:"fore",luther:"ref",zwingli:"ref",tyndale:"ref",calvin:"ref",knox:"ref",perkins:"pur",owen:"pur",bunyan:"pur",henry:"pur",edwards:"pur"};
   var GAP=520,X=300,ANG=58;

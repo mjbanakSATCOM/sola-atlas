@@ -1,5 +1,5 @@
 /* Reformed Atlas – people museum hall (CSS 3D) */
-.museum{position:relative;margin:1.2rem 0 .6rem;border-radius:var(--r);overflow:hidden;background:#0d0a08;box-shadow:var(--sh);outline:none;user-select:none;touch-action:pan-y}
+.museum{position:relative;margin:1.2rem 0 .6rem;border-radius:var(--r);overflow:hidden;background:#0d0a08;box-shadow:var(--sh);outline:none;-webkit-user-select:none;user-select:none;touch-action:pan-y}
 .museum:focus-visible{box-shadow:0 0 0 3px var(--brass)}
 .mu-stage{height:min(72vh,620px);perspective:820px;perspective-origin:50% 42%;cursor:grab;overflow:hidden;position:relative}
 .mu-stage:active{cursor:grabbing}
