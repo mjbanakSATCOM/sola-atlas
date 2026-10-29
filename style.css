@@ -270,3 +270,7 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .shelves .spine{flex:1 1 0;min-width:0;max-width:none}
 .shelves .spine:nth-child(3n){flex-grow:1.12}.shelves .spine:nth-child(4n+1){flex-grow:.9}
 .shelves .spine .st{font-size:.78rem}
+/* Center spine titles on the book spine */
+.spine{justify-content:center;align-items:center;text-align:center}
+.spine .st{margin:auto 0;line-height:1;display:block;text-align:center;max-height:calc(var(--h) - 96px)}
+.spine .sa{flex:0 0 auto;line-height:1;text-align:center}
