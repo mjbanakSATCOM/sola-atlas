@@ -44,18 +44,25 @@ function sv(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttrib
 // Europe: lon -8..18, lat 44..58 → 40..560 x, 30..490 y ; inset New England lon -74..-69, lat 41..44 → 600..780, 330..490
 function projE(lon,lat){return[40+(lon+8)/26*520,30+(58-lat)/14*460]}
 function projN(lon,lat){return[600+(lon+74)/5*180,340+(44-lat)/3*140]}
-var g=sv("g",{class:"grat"});for(var lo=-5;lo<=15;lo+=5){var a=projE(lo,58),b=projE(lo,44);g.appendChild(sv("line",{x1:a[0],y1:a[1],x2:b[0],y2:b[1]}))}for(var la=45;la<=57;la+=3){var c=projE(-8,la),d=projE(18,la);g.appendChild(sv("line",{x1:c[0],y1:c[1],x2:d[0],y2:d[1]}))}svg.appendChild(g);
-// rough land silhouettes (schematic)
-function poly(pts,pr,cls){return sv("path",{class:cls||"land",d:"M"+pts.map(function(p){var q=pr(p[0],p[1]);return q[0].toFixed(1)+","+q[1].toFixed(1)}).join("L")+"Z"})}
-svg.appendChild(poly([[-5.7,50],[-3,50.6],[1.4,51.1],[1.7,52.7],[0.2,53.5],[-0.5,54.5],[-1.6,55.6],[-2.1,57.1],[-1.8,57.6],[-4,57.6],[-5,58.5],[-6,57.5],[-5.6,56],[-4.9,55.1],[-3,54.6],[-3.4,53.3],[-4.6,52.8],[-4.2,51.6],[-5.7,50]],projE));
-svg.appendChild(poly([[-6,52],[-6.3,54.1],[-7.7,55.2],[-8,51.5]],projE));
-svg.appendChild(poly([[-1.6,44],[-1.2,46.2],[-2.5,47.3],[-4.6,48.4],[-1.4,48.7],[-1.3,49.7],[0.2,49.7],[1.6,50.9],[3.2,51.4],[4.8,52.9],[5.6,53.4],[7,53.6],[8.6,53.9],[8.9,54.9],[8.2,55.6],[8.1,56.8],[10.6,57.7],[10.6,56.2],[12,54.4],[14,54],[18,54.8],[18,44],[12.3,44.6],[13.7,45.6],[10,44],[7,43.6],[3.2,43.3],[3.1,42.4]],projE));
+var defs=sv("defs",{});defs.innerHTML='<linearGradient id="mg-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe0e3"/><stop offset="1" stop-color="#b9d0d6"/></linearGradient><linearGradient id="mg-land" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6efdc"/><stop offset="1" stop-color="#e9dcbc"/></linearGradient><filter id="mg-sh" x="-5%" y="-5%" width="110%" height="110%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-color="#3b4f55" flood-opacity=".35"/></filter><clipPath id="mg-ins"><rect x="590" y="322" width="200" height="180" rx="8"/></clipPath>';svg.appendChild(defs);
+svg.appendChild(sv("rect",{x:0,y:0,width:800,height:520,fill:"url(#mg-sea)"}));
+var g=sv("g",{class:"grat"});for(var lo=-10;lo<=30;lo+=5){var a=projE(lo,60),b=projE(lo,42);g.appendChild(sv("line",{x1:a[0],y1:a[1],x2:b[0],y2:b[1]}))}for(var la=44;la<=58;la+=2){var c=projE(-12,la),d=projE(32,la);g.appendChild(sv("line",{x1:c[0],y1:c[1],x2:d[0],y2:d[1]}))}svg.appendChild(g);
+function drawLand(list,cls){var lg=sv("g",{class:"landg",filter:"url(#mg-sh)"});list.forEach(function(c){var p=sv("path",{class:cls,d:c[1]});var t=sv("title",{});t.textContent=c[0];p.appendChild(t);lg.appendChild(p)});return lg;}
+var MD=window.MAPD||{eu:[],ne:[],lakes:[]};
+svg.appendChild(drawLand(MD.eu,"land"));
+var lkg=sv("g",{class:"lakes"});MD.lakes.forEach(function(d){lkg.appendChild(sv("path",{d:d}))});svg.appendChild(lkg);
+function lbl(x,y,t,cls,rot){var e=sv("text",{x:x,y:y,class:cls,"text-anchor":"middle"});if(rot)e.setAttribute("transform","rotate("+rot+" "+x+" "+y+")");e.textContent=t;svg.appendChild(e);}
+[[-5.2,46.9,"ATLANTIC",0],[3.6,55.6,"NORTH SEA",0],[-2.6,49.75,"English Channel",-8],[-5.2,53.7,"Irish Sea",0],[15.5,55.2,"Baltic",0]].forEach(function(s){var q=projE(s[0],s[1]);lbl(q[0],q[1],s[2],"sea-label",s[3])});
+[[2.2,47.4,"FRANCE"],[10.2,51.0,"GERMAN LANDS"],[-1.6,53.0,"ENGLAND"],[-3.6,57.15,"SCOTLAND"],[-7.3,52.9,"IRELAND"],[8.9,46.45,"SWISS"],[15.6,49.4,"BOHEMIA"],[6.3,52.75,"NETHERLANDS"],[10.5,44.6,"ITALY"]].forEach(function(s){var q=projE(s[0],s[1]);lbl(q[0],q[1],s[2],"region-label")});
+svg.appendChild(sv("rect",{x:584,y:316,width:212,height:192,rx:11,class:"inset-mat"}));
 svg.appendChild(sv("rect",{x:590,y:322,width:200,height:180,rx:8,class:"inset"}));
-svg.appendChild(poly([[-74,41],[-71.9,41.3],[-70.6,41.6],[-70,41.7],[-70.2,42.1],[-70.7,42.4],[-70.6,43.1],[-70,43.8],[-69,44],[-74,44]],projN));
+var ig=sv("g",{"clip-path":"url(#mg-ins)"});ig.appendChild(drawLand(MD.ne,"land"));svg.appendChild(ig);
 var it=sv("text",{x:600,y:340,class:"inset-label"});it.textContent="NEW ENGLAND";svg.appendChild(it);
+var q2=projN(-70.0,41.0);lbl(q2[0],q2[1],"Atlantic","sea-label sm");
+var sc=sv("text",{x:16,y:510,class:"map-credit"});sc.textContent="Modern coastlines & borders for orientation · Natural Earth";svg.appendChild(sc);
 Object.keys(S.places).forEach(function(k){var p=S.places[k],xy=p.ne?projN(p.lon,p.lat):projE(p.lon,p.lat);
   var gg=sv("g",{class:"city",tabindex:"0",role:"button","data-k":k,"aria-label":p.n,transform:"translate("+xy[0].toFixed(1)+","+xy[1].toFixed(1)+")"});
-  gg.appendChild(sv("circle",{r:14,class:"halo"}));gg.appendChild(sv("circle",{r:6,class:"dot"}));
+  gg.appendChild(sv("circle",{r:15,class:"halo"}));gg.appendChild(sv("circle",{r:7.5,class:"ring"}));gg.appendChild(sv("circle",{r:4.5,class:"dot"}));
   var L=p.lab||[10,-10,"start"];var tx=sv("text",{x:L[0],y:L[1],"text-anchor":L[2]});tx.textContent=p.n;gg.appendChild(tx);
   gg.addEventListener("click",function(){highlight(k,true)});gg.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();highlight(k,true)}});svg.appendChild(gg);});
 function highlight(k,showInfo){$$(".city",svg).forEach(function(c){c.classList.toggle("on",c.dataset.k===k)});var p=S.places[k];
