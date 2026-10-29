@@ -418,7 +418,7 @@ html,body{overflow-x:clip}
 
 /* Reformation intro (draft) */
 #reformation{--bg:url(assets/hero-95-theses.jpg)}
-.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.25rem;margin-top:1.25rem}
+.ref-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:1.25rem}@media (max-width:720px){.ref-grid{grid-template-columns:1fr}}
 .ref-block{background:rgba(255,250,238,.92);border:1px solid rgba(138,90,18,.25);border-radius:12px;padding:1.1rem 1.3rem;line-height:1.6}
 .ref-block h3{margin:0 0 .5rem}.ref-block ul{padding-left:1.1rem;margin:0}.ref-block li{margin:.45rem 0}
 .ref-quote{margin:1.75rem auto;max-width:46rem;font-size:1.2rem;font-style:italic;text-align:center;line-height:1.5}
