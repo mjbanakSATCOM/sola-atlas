@@ -394,3 +394,10 @@ html,body{overflow-x:clip}
 .city:focus-visible .ring{stroke:var(--brass);stroke-width:3}
 .city.on .ring{stroke:var(--brass);stroke-width:2.5}.city.on .dot{fill:var(--brass)}
 .map-info .place-photo{height:240px;max-height:240px;image-rendering:auto}
+/* II Confessions — dark lapis section */
+#confessions.sec.dark::before{background-image:linear-gradient(rgba(35,57,91,.9),rgba(22,36,62,.94)),var(--bg)}
+#confessions .conf-card,#confessions .cmp-grid>*{color:var(--ink,#1f1b16)}
+#confessions .conf-card a{color:#8a5a12}
+#confessions .conf-list button,#confessions .conf-list li>*{color:#eae3d1;border-color:rgba(241,201,122,.45)}
+#confessions .chips button{color:#eae3d1;border-color:rgba(241,201,122,.45)}
+#confessions .small{color:#c9c2b0}
