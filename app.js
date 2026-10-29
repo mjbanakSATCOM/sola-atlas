@@ -82,10 +82,15 @@ S.books.forEach(function(b,i){var s=el("button",{class:"spine",role:"listitem","
   s.addEventListener("click",function(){$$(".spine",shelf).forEach(function(x){x.classList.toggle("out",x===s)});
     bc.innerHTML='<div class="cover" style="--c:'+b.c+'"><span>'+b.t+'</span><small>'+b.a+'</small></div><div><p class="kicker">'+b.cat+' · '+b.y+'</p><h3>'+b.t+'</h3><p class="by">'+b.a+'</p><p>'+b.about+'</p><p class="d2"><b>Where to start:</b> '+b.start+'</p>'+src(b.src,"Read / learn more")+'</div>';
     bc.classList.remove("pop");void bc.offsetWidth;bc.classList.add("pop");});spines.push(s);});
-function layShelves(f){shelf.innerHTML="";var row;spines.filter(function(s){s.hidden=!(f==="all"||s.dataset.cat===f);return !s.hidden}).forEach(function(s,i){if(i%16===0){row=el("div",{class:"shelf",role:"list"});shelf.appendChild(row)}s.hidden=false;row.appendChild(s)});}
+var shelfLbl={all:"Shelf",theology:"Theology",commentary:"Commentaries",puritan:"Puritan classics",devotional:"Devotional",biography:"Biography"};
+function layShelves(f){shelf.innerHTML="";var row;spines.filter(function(s){s.hidden=!(f==="all"||s.dataset.cat===f);return !s.hidden}).forEach(function(s,i){if(i%16===0){row=el("div",{class:"shelf",role:"list"});shelf.appendChild(row)}s.hidden=false;row.appendChild(s)});$$(".shelf",shelf).forEach(function(r,k){r.appendChild(el("span",{class:"shelf-plate","aria-hidden":"true"},(shelfLbl[f]||"Shelf")+" · "+["I","II","III","IV","V"][k]));$$(".spine",r).forEach(function(sp,j){sp.style.transitionDelay="0s,0s,0s,0s,"+(j*45+k*120)+"ms,"+(j*45+k*120)+"ms"})});if(window._sd)shelf.appendChild(window._sd);}
 layShelves("all");
 filterChips("#shelf-chips",layShelves);
 $(".spine",shelf).click();
+/* shelf wow: dust + staggered entrance */
+(function(){var d=el("div",{class:"shelf-dust","aria-hidden":"true"});for(var i=0;i<14;i++){var p=document.createElement("i");p.style.left=(5+i*6.7)+"%";p.style.animationDelay=(i*1.3)+"s";p.style.animationDuration=(14+i%5*2)+"s";d.appendChild(p)}window._sd=d;shelf.appendChild(d);
+var mq=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(mq||!("IntersectionObserver" in window))return;shelf.classList.add("pre");
+var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){shelf.classList.remove("pre");o.disconnect()}},{threshold:.15});o.observe(shelf);})();
 
 /* paths */
 var PATHS=[

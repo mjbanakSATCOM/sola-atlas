@@ -305,3 +305,29 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 @media (max-width:980px){.hero-art{inset:0;opacity:.35}.hero-art img{inset:-6% 0;width:100%}.hero-meridian{right:-20%;width:110vw;opacity:.12}.hero-rays{inset:-20% -30% auto 0}}
 @media (prefers-reduced-motion:reduce){.hero-art img,.hero-rays,.hero-dust i,.hero-meridian *,.hero-rule path,.hero-anim .hero-inner>*{animation:none!important;opacity:revert;transform:none;stroke-dashoffset:0}.hero-dust{display:none}.hero-anim .hero-inner>*{opacity:1}}
 /* ===== HERO DRAFT (motion) — end ===== */
+
+/* ===== BOOKSHELF WOW (draft) ===== */
+.shelves{position:relative;isolation:isolate;padding:26px 18px 30px;border-radius:10px;
+ background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,214,140,.22),transparent 70%),linear-gradient(180deg,#1c130b,#120c07);
+ box-shadow:0 30px 60px -20px rgba(0,0,0,.6),inset 0 0 0 1px rgba(201,162,90,.25),inset 0 0 80px rgba(0,0,0,.7)}
+.shelves::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;
+ background:radial-gradient(ellipse at 50% 35%,transparent 45%,rgba(8,5,2,.55) 100%)}
+.shelves .shelf{position:relative;overflow:visible;
+ background:linear-gradient(180deg,rgba(255,200,120,.08),transparent 30%),linear-gradient(180deg,#24180e,#3b2817 calc(100% - 20px),#a07444 calc(100% - 20px),#7a5532 calc(100% - 17px),#563a21 calc(100% - 6px),#2a1b0f 100%);
+ box-shadow:inset 0 14px 30px rgba(0,0,0,.65),inset 12px 0 20px -8px rgba(0,0,0,.6),inset -12px 0 20px -8px rgba(0,0,0,.6),0 14px 18px -10px rgba(0,0,0,.8)}
+.shelves .shelf::after{content:"";position:absolute;left:10px;right:10px;bottom:20px;height:14px;pointer-events:none;
+ background:radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.55),transparent 70%)}
+.shelf-plate{position:absolute;left:50%;bottom:3px;transform:translateX(-50%);z-index:2;font:600 .58rem var(--f-mono);letter-spacing:.22em;text-transform:uppercase;
+ color:#3a2614;padding:1px 12px;border-radius:2px;background:linear-gradient(180deg,#f0d593,#b48a3c 55%,#8a6528);box-shadow:0 1px 2px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.5)}
+.shelves .spine{transition:transform .35s cubic-bezier(.2,.8,.2,1),margin .3s,box-shadow .35s,filter .35s,opacity .6s,translate .7s cubic-bezier(.2,.9,.25,1)}
+.shelves .spine:hover{filter:brightness(1.12)}
+.shelves .spine.out{z-index:2;filter:brightness(1.15);
+ box-shadow:0 0 0 1px rgba(231,201,138,.85),0 0 18px 2px rgba(255,205,120,.45),0 -10px 24px rgba(0,0,0,.6)}
+.shelves .spine.out .st{background:linear-gradient(#fff2c8,#e0b85a);-webkit-background-clip:text;background-clip:text;animation:shGleam 2.8s ease-in-out infinite}
+@keyframes shGleam{50%{filter:drop-shadow(0 0 4px rgba(255,215,140,.8))}}
+.shelf-dust{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden;border-radius:inherit}
+.shelf-dust i{position:absolute;bottom:-6px;width:2px;height:2px;border-radius:50%;background:#f3e2b6;box-shadow:0 0 6px #e0b85a;opacity:0;animation:shDust 18s linear infinite}
+@keyframes shDust{0%{transform:translate(0,0);opacity:0}20%{opacity:.5}80%{opacity:.35}100%{transform:translate(30px,-420px);opacity:0}}
+.shelves.pre .spine{opacity:0;translate:0 -40px}
+@media (prefers-reduced-motion:reduce){.shelf-dust{display:none}.shelves.pre .spine{opacity:1;translate:none}.shelves .spine.out .st{animation:none}}
+@media (max-width:640px){.shelves{padding:16px 6px 22px}.shelf-plate{font-size:.5rem;letter-spacing:.14em}}
