@@ -9,7 +9,7 @@
 (function(){
   var fx=document.querySelector('.hero-fx');if(!fx)return;
   var w=document.createElement('div');w.className='hero-stars';
-  var R=Math.random,h='<i class="glow g1"></i><i class="glow g2"></i><i class="shoot"></i>';
+  var R=Math.random,h='<i class="glow g1"></i><i class="glow g2"></i>';
   var small=innerWidth<700,ns=small?80:170,np=small?14:30,no=small?12:26;
   function st(c,s,d){return '<i class="'+c+'" style="left:'+(R()*100).toFixed(1)+'%;top:'+(R()*100).toFixed(1)+'%;--s:'+s+'px;--d:'+d+'s;--dl:-'+(R()*d).toFixed(1)+'s'}
   for(var i=0;i<ns;i++)h+=st('st',(R()<.15?(3+R()*2.5):(.8+R()*2)).toFixed(1),(2+R()*4).toFixed(1))+'"></i>';
