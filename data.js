@@ -1,4 +1,4 @@
-/* Sola Atlas content data. Every entry links a public source. */
+/* Reformed Atlas content data. Every entry links a public source. */
 window.SOLA = {
   solas: [
     { key:"scriptura", latin:"Sola Scriptura", en:"Scripture alone",
