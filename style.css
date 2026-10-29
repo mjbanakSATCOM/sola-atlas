@@ -415,3 +415,12 @@ html,body{overflow-x:clip}
 .sec.ink .scot-h{color:#f1c97a}
 .sec.ink .back a{color:#f1c97a}
 .sec.ink .mu-panel a{color:#8a5a12}.sec.ink .mu-panel .small{color:#5a5446}
+
+/* Reformation intro (draft) */
+#reformation{--bg:url(assets/hero-95-theses.jpg)}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.25rem;margin-top:1.25rem}
+.ref-block{background:rgba(255,250,238,.92);border:1px solid rgba(138,90,18,.25);border-radius:12px;padding:1.1rem 1.3rem;line-height:1.6}
+.ref-block h3{margin:0 0 .5rem}.ref-block ul{padding-left:1.1rem;margin:0}.ref-block li{margin:.45rem 0}
+.ref-quote{margin:1.75rem auto;max-width:46rem;font-size:1.2rem;font-style:italic;text-align:center;line-height:1.5}
+.ref-quote cite{display:block;margin-top:.5rem;font-size:.9rem;font-style:normal}
+.ref-video{text-align:center;margin-top:1rem}.ref-video .small{max-width:40rem;margin:.6rem auto 0}
