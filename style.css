@@ -423,7 +423,7 @@ html,body{overflow-x:clip}
 .ref-block h3{margin:0 0 .5rem}.ref-block ul{padding-left:1.1rem;margin:0}.ref-block li{margin:.45rem 0}
 .ref-quote{margin:1.75rem auto;max-width:46rem;font-size:1.2rem;font-style:italic;text-align:center;line-height:1.5}
 .ref-quote cite{display:block;margin-top:.5rem;font-size:.9rem;font-style:normal}
-.ref-video{text-align:center;margin-top:1rem}.ref-video .small{max-width:40rem;margin:.6rem auto 0}
+.ref-video{text-align:center;margin-top:1rem}.ref-video .btn{margin:.3rem}.ref-video .small{max-width:40rem;margin:.6rem auto 0}
 
 /* Reformation intro: hero-like */
 .ref-hero{position:relative;background:radial-gradient(ellipse at 50% 0,rgba(181,137,59,.18),transparent 60%),var(--ink);color:var(--vellum);min-height:92vh;min-height:92svh;display:flex;align-items:center;overflow:hidden;border-top:1px solid rgba(181,137,59,.4);border-bottom:1px solid rgba(181,137,59,.4)}
