@@ -401,3 +401,17 @@ html,body{overflow-x:clip}
 #confessions .conf-list button,#confessions .conf-list li>*{color:#eae3d1;border-color:rgba(241,201,122,.45)}
 #confessions .chips button{color:#eae3d1;border-color:rgba(241,201,122,.45)}
 #confessions .small{color:#c9c2b0}
+
+/* Hero-ink dark green sections */
+.sec.dark.ink{background:var(--ink)}
+.sec.dark.ink[id]::before{background-image:linear-gradient(rgba(20,32,28,.88),rgba(10,16,14,.94)),var(--bg)}
+.sec.ink .sola-panel,.sec.ink .layer,.sec.ink .book-card,.sec.ink .hymn-card,.sec.ink .scot-places>div,.sec.ink .layer p,.sec.ink .layer li,.sec.ink .flip,.sec.ink .front{color:var(--ink)}
+.sec.ink .sola-tabs button[aria-selected="true"]{background:var(--brass,#b8893a);color:var(--ink);border-color:var(--brass,#b8893a)}
+.sec.ink .chips button{color:#eae3d1;border-color:rgba(241,201,122,.45)}
+.sec.ink .chips button.on{background:#f1c97a;color:var(--ink);border-color:#f1c97a}
+.sec.ink .small{color:#c9c2b0}
+.sec.ink :is(.sola-panel,.layer,.book-card,.hymn-card,.scot-places>div,.back,[class*="card"],[class*="dl"]) a{color:#8a5a12}
+.sec.ink :is(.layer,.hymn-card,.scot-places>div,[class*="card"]) :is(.small,p.small,.muted){color:#5a5446}
+.sec.ink .scot-h{color:#f1c97a}
+.sec.ink .back a{color:#f1c97a}
+.sec.ink .mu-panel a{color:#8a5a12}.sec.ink .mu-panel .small{color:#5a5446}
