@@ -199,6 +199,7 @@ h2{font-size:clamp(2rem,4.5vw,3.1rem);letter-spacing:-.01em}h3{font-size:1.5rem}
 #solas{--bg:url(assets/bg/bg-solas.jpg)}#confessions{--bg:url(assets/bg/bg-confessions.jpg)}#election{--bg:url(assets/bg/bg-election.jpg)}
 #era{--bg:url(assets/bg/bg-era.jpg)}#map{--bg:url(assets/bg/bg-map.jpg)}#people{--bg:url(assets/bg/bg-people.jpg)}
 #puritans{--bg:url(assets/bg/bg-puritans.jpg)}#shelf{--bg:url(assets/bg/bg-shelf.jpg)}#path{--bg:url(assets/bg/bg-path.jpg)}
+#scotland{--bg:url(assets/bg/bg-scotland.jpg)}
 /* Election downloads */
 .docs{margin-top:2rem;padding:1.4rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
 .docs h3{font-family:var(--f-display);margin:0 0 .2rem;color:var(--oxblood)}
