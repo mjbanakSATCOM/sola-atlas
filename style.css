@@ -424,3 +424,24 @@ html,body{overflow-x:clip}
 .ref-quote{margin:1.75rem auto;max-width:46rem;font-size:1.2rem;font-style:italic;text-align:center;line-height:1.5}
 .ref-quote cite{display:block;margin-top:.5rem;font-size:.9rem;font-style:normal}
 .ref-video{text-align:center;margin-top:1rem}.ref-video .small{max-width:40rem;margin:.6rem auto 0}
+
+/* Reformation intro: hero-like */
+.ref-hero{position:relative;background:radial-gradient(ellipse at 50% 0,rgba(181,137,59,.18),transparent 60%),var(--ink);color:var(--vellum);min-height:92vh;min-height:92svh;display:flex;align-items:center;overflow:hidden;border-top:1px solid rgba(181,137,59,.4);border-bottom:1px solid rgba(181,137,59,.4)}
+.ref-hero>.wrap{position:relative;z-index:1}
+.ref-hero .head{text-align:center;max-width:52rem;margin-inline:auto}
+.ref-hero .kicker{color:var(--brass);letter-spacing:.18em}
+.ref-hero h2{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:800;letter-spacing:-.02em;margin:.1em 0 .25em;color:var(--vellum)}
+.ref-hero .head>p:last-child{font-size:1.25rem;color:#d9d1bd}
+.ref-hero .head::after{content:"";display:block;width:120px;height:2px;margin:1.2rem auto 0;background:linear-gradient(90deg,transparent,var(--brass),transparent)}
+.ref-hero .ref-block{background:rgba(251,247,238,.96);color:var(--ink);border-top:3px solid var(--brass)}
+.ref-hero .ref-block a{color:#8a5a12}
+.ref-hero .ref-quote{font:italic clamp(1.4rem,2.6vw,2rem)/1.45 var(--f-display);max-width:52rem;color:var(--vellum);margin:2.5rem auto}
+.ref-hero .ref-quote::before{content:"“";display:block;font-size:4rem;line-height:.6;color:var(--brass)}
+.ref-hero a{color:#f1c97a}
+.ref-hero .small{color:#c9c2b0}
+.ref-voices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.5rem;margin:2.5rem 0 1.5rem}
+.ref-voices>.kicker{grid-column:1/-1;text-align:center;margin:0}
+.ref-voices figure{margin:0;padding:1.4rem 1.5rem;border:1px solid rgba(181,137,59,.45);border-left:4px solid var(--brass);border-radius:10px;background:rgba(255,255,255,.04)}
+.ref-voices blockquote{margin:0;font:italic 1.2rem/1.5 var(--f-display);color:var(--vellum)}
+.ref-voices figcaption{margin-top:.8rem;font-size:.9rem;color:var(--brass);font-weight:600}
+@media (prefers-reduced-motion:no-preference){.ref-voices figure{transition:transform .3s,border-color .3s}.ref-voices figure:hover{transform:translateY(-3px);border-color:var(--brass)}}
