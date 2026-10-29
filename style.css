@@ -200,6 +200,11 @@ h2{font-size:clamp(2rem,4.5vw,3.1rem);letter-spacing:-.01em}h3{font-size:1.5rem}
 #era{--bg:url(assets/bg/bg-era.jpg)}#map{--bg:url(assets/bg/bg-map.jpg)}#people{--bg:url(assets/bg/bg-people.jpg)}
 #puritans{--bg:url(assets/bg/bg-puritans.jpg)}#shelf{--bg:url(assets/bg/bg-shelf.jpg)}#path{--bg:url(assets/bg/bg-path.jpg)}
 #scotland{--bg:url(assets/bg/bg-scotland.jpg)}
+#hymns{--bg:url(assets/bg/bg-hymns.jpg)}
+#reformation-day{--bg:url(assets/bg/bg-reformation-day.jpg)}
+.sec.band[id]{position:relative;isolation:isolate}
+.sec.band[id]::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(123,34,48,.86),rgba(70,18,28,.92)),var(--bg);background-size:cover;background-position:center;filter:sepia(.2)}
+@media (min-width:900px) and (hover:hover){.sec.band[id]::before{background-attachment:fixed}}
 /* Election downloads */
 .docs{margin-top:2rem;padding:1.4rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
 .docs h3{font-family:var(--f-display);margin:0 0 .2rem;color:var(--oxblood)}

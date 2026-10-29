@@ -17,6 +17,8 @@ Portraits of Wycliffe, Hus, Luther, Zwingli, Tyndale, Calvin, Knox, Perkins, Owe
 - bg-shelf.jpg — Austria - Admont Abbey Library - 1277.jpg — Jorge Royan — CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/) — https://commons.wikimedia.org/wiki/File:Austria_-_Admont_Abbey_Library_-_1277.jpg — resized, recompressed and shown under a tinted overlay
 - bg-path.jpg — Henry Courtney Selous - Illustration to Pilgrim's Progress, 10 (The Pilgrim in the Armory) - B1981.3.1 - Yale Center for British Art.jpg — Henry Courtney Selous — CC0 — https://commons.wikimedia.org/wiki/File:Henry_Courtney_Selous_-_Illustration_to_Pilgrim%27s_Progress,_10_(The_Pilgrim_in_the_Armory)_-_B1981.3.1_-_Yale_Center_for_British_Art.jpg
 - bg-scotland.jpg — St Giles Cathedral - 01.jpg — Carlos Delgado — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File:St_Giles_Cathedral_-_01.jpg
+- bg-hymns.jpg — Achtliederbuch.jpg — Derbrauni — CC BY 4.0 — https://commons.wikimedia.org/wiki/File:Achtliederbuch.jpg
+- bg-reformation-day.jpg — Wittenberg, Schlosskirche (Juni 2026) 1.jpg — Romzig — CC0 — https://commons.wikimedia.org/wiki/File:Wittenberg,_Schlosskirche_(Juni_2026)_1.jpg
 
 
 ## Geography place photos (`assets/places/`)
