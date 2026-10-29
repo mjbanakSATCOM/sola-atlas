@@ -30,7 +30,7 @@
     if(!feat.hidden)fill();
     count.textContent="Exhibit "+(cur+1)+" of "+vis.length;}
   function step(d){go(cur+d);if(feat.hidden)feature(ex[vis[cur]]);else if(fig.animate)fig.animate([{opacity:.3,transform:"translateX("+(d*40)+"px) scale(.96)"},{opacity:1,transform:"none"}],{duration:380,easing:"ease-out"});}
-  function filter(f){vis=[];ex.forEach(function(e,i){var ok=f==="all"||e.dataset.era===f;e.hidden=!ok;if(ok)vis.push(i)});layout();go(0);}
+  function filter(f){vis=[];ex.forEach(function(e,i){var ok=f==="all"||e.dataset.era===f;e.hidden=!ok;if(ok)vis.push(i)});layout();go(0);if(vis.length)feature(ex[vis[0]]);else unfeature();}
   m.querySelectorAll(".mu-hud button").forEach(function(b){b.addEventListener("click",function(){step(+b.dataset.d)})});
   m.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowUp"){step(1);e.preventDefault()}else if(e.key==="ArrowLeft"||e.key==="ArrowDown"){step(-1);e.preventDefault()}});
   var st=m.querySelector(".mu-stage"),x0=null;
