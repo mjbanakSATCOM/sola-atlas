@@ -33,3 +33,14 @@
 .mu-vign{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 45%,rgba(0,0,0,.65))}
 @media (max-width:700px){.mu-stage{height:440px;perspective:600px}.mu-panel{position:static;width:auto;margin:0;border-radius:0}.mu-hud{bottom:auto;top:12px}}
 #people-grid[hidden]{display:none}
+.mu-feat{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 42%,rgba(40,26,16,.55),rgba(5,4,3,.88) 70%);animation:muFade .45s ease}
+.mu-feat[hidden]{display:none}
+.mu-feat-light{position:absolute;left:50%;top:-10%;width:640px;height:120%;margin-left:-320px;pointer-events:none;background:radial-gradient(ellipse 34% 48% at 50% 48%,rgba(255,214,150,.38),rgba(255,190,110,.12) 55%,transparent 72%);mix-blend-mode:screen}
+.mu-feat figure{margin:0;position:relative;transform-origin:center}
+.mu-feat .mu-frame{padding:18px;box-shadow:0 40px 80px -10px #000,0 0 70px 10px rgba(255,200,120,.35),inset 0 0 0 3px #4a3112}
+.mu-feat .mu-frame img{display:block;width:auto;height:min(46vh,400px);aspect-ratio:4/5;box-shadow:inset 0 0 0 10px #f3ecdc}
+.mu-feat .mu-plaque{width:240px}
+.mu-feat-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:999px;background:rgba(20,14,10,.8);color:#f3ecdc;border:1px solid #b5893b;font-size:1.4rem;cursor:pointer}
+.museum.featuring .mu-hud{z-index:4}
+@keyframes muFade{from{opacity:0}}
+@media (max-width:700px){.mu-feat .mu-frame img{height:250px}}
