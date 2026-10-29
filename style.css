@@ -331,3 +331,5 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .shelves.pre .spine{opacity:0;translate:0 -40px}
 @media (prefers-reduced-motion:reduce){.shelf-dust{display:none}.shelves.pre .spine{opacity:1;translate:none}.shelves .spine.out .st{animation:none}}
 @media (max-width:640px){.shelves{padding:16px 6px 22px}.shelf-plate{font-size:.5rem;letter-spacing:.14em}}
+/* full spine titles: fitted by JS, varied type */
+.spine .st,.shelves .spine .st{white-space:normal;overflow:visible;text-overflow:clip;max-height:none;max-width:none;line-height:1.05;text-wrap:balance;font-size:var(--fs,.78rem);font-family:var(--ff,var(--f-display));font-style:var(--fi,normal);font-weight:var(--fw,600);letter-spacing:var(--ls,0);text-transform:var(--tt,none)}

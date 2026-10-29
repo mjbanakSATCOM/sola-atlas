@@ -140,3 +140,21 @@ n.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
 document.addEventListener('click',e=>{if(n.classList.contains('open')&&!n.contains(e.target)&&!b.contains(e.target))set(false);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&n.classList.contains('open')){set(false);b.focus();}});
 matchMedia('(min-width:981px)').addEventListener('change',m=>{if(m.matches)set(false);});})();
+(function(){var styles=[
+ {ff:'var(--f-display)',fw:600,fi:'normal',ls:'.01em',tt:'none'},
+ {ff:'var(--f-body)',fw:400,fi:'italic',ls:'0',tt:'none'},
+ {ff:'var(--f-display)',fw:800,fi:'normal',ls:'.06em',tt:'uppercase'},
+ {ff:'var(--f-body)',fw:700,fi:'normal',ls:'.02em',tt:'none'},
+ {ff:'var(--f-display)',fw:400,fi:'italic',ls:'0',tt:'none'},
+ {ff:'var(--f-mono)',fw:500,fi:'normal',ls:'.04em',tt:'uppercase'},
+ {ff:'var(--f-body)',fw:600,fi:'italic',ls:'.01em',tt:'none'},
+ {ff:'var(--f-display)',fw:600,fi:'normal',ls:'.12em',tt:'uppercase'}];
+function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
+function fit(){document.querySelectorAll('#bookshelf .spine').forEach(function(sp){var st=sp.querySelector('.st');if(!st||sp.hidden)return;
+ if(!st.dataset.v){var n=st.textContent.length,v=styles[hash(st.textContent)%styles.length];if(n>26&&(v.tt==='uppercase'||v.ls!=='0'))v=[styles[1],styles[4],styles[6],styles[0]][hash(st.textContent)%4];st.style.setProperty('--ff',v.ff);st.style.setProperty('--fw',v.fw);st.style.setProperty('--fi',v.fi);st.style.setProperty('--ls',v.ls);st.style.setProperty('--tt',v.tt);st.dataset.v=1;sp.style.flexGrow=n>40?1.7:n>30?1.35:n>22?1.1:.85}
+ var sa=sp.querySelector('.sa');var avail=sp.clientHeight-72, across=sp.clientWidth-(sa?sa.offsetWidth:0)-10; if(avail<20)return;st.style.height='auto';st.style.maxHeight=avail+'px';
+ var fs=15;st.style.setProperty('--fs',fs+'px');
+ while(fs>6&&(st.scrollHeight>avail+1||st.offsetWidth>across)){fs-=.5;st.style.setProperty('--fs',fs+'px')}});}
+window._fitSpines=fit;var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,150)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,50);
+document.querySelectorAll('#shelf-chips button,#shelf-chips [data-f]').forEach(function(b){b.addEventListener('click',function(){setTimeout(fit,30)})});})();
