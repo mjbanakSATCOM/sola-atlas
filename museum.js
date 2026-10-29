@@ -30,15 +30,28 @@
     if(!feat.hidden)fill();
     count.textContent="Exhibit "+(cur+1)+" of "+vis.length;}
   function step(d){go(cur+d);if(feat.hidden)feature(ex[vis[cur]]);else if(fig.animate)fig.animate([{opacity:.3,transform:"translateX("+(d*40)+"px) scale(.96)"},{opacity:1,transform:"none"}],{duration:380,easing:"ease-out"});}
-  function filter(f){vis=[];ex.forEach(function(e,i){var ok=f==="all"||e.dataset.era===f;e.hidden=!ok;if(ok)vis.push(i)});layout();go(0);if(vis.length)feature(ex[vis[0]]);else unfeature();}
+  function showFirst(){if(!vis.length){unfeature();return}go(0);feature(ex[vis[0]]);}
+  function filter(f){vis=[];ex.forEach(function(e,i){var ok=f==="all"||e.dataset.era===f;e.hidden=!ok;if(ok)vis.push(i)});layout();
+    // Safari often measures 0-size frames before paint; wait a couple frames then open
+    requestAnimationFrame(function(){requestAnimationFrame(showFirst)});}
   m.querySelectorAll(".mu-hud button").forEach(function(b){b.addEventListener("click",function(){step(+b.dataset.d)})});
   m.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowUp"){step(1);e.preventDefault()}else if(e.key==="ArrowLeft"||e.key==="ArrowDown"){step(-1);e.preventDefault()}});
   var st=m.querySelector(".mu-stage"),x0=null;
   st.addEventListener("pointerdown",function(e){x0=e.clientX});
-  window.addEventListener("pointerup",function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));});
-  st.addEventListener("wheel",function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>20){go(cur+(e.deltaX>0?1:-1));e.preventDefault()}},{passive:false});
+  window.addEventListener("pointerup",function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;if(Math.abs(dx)>40){go(cur+(dx<0?1:-1));if(feat.hidden&&vis.length)feature(ex[vis[cur]]);}});
+  st.addEventListener("wheel",function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>20){go(cur+(e.deltaX>0?1:-1));if(feat.hidden&&vis.length)feature(ex[vis[cur]]);e.preventDefault()}},{passive:false});
   document.querySelectorAll("#ppl-chips .chip").forEach(function(b){b.addEventListener("click",function(){filter(b.dataset.f)})});
   grid.hidden=true;grid.parentNode.insertBefore(m,grid);
   var h=document.querySelector("#people .head > p:not(.kicker)");if(h)h.textContent="Walk the gallery hall: drag or swipe, use the arrow keys, or click a portrait to bring it to the center. Filter by era.";
   filter("all");
+  // When the hall scrolls into view (Safari / late layout), ensure first portrait is featured
+  if("IntersectionObserver" in window){
+    var seen=false;
+    var io=new IntersectionObserver(function(es){
+      if(!es[0].isIntersecting)return;
+      if(feat.hidden&&vis.length)showFirst();
+      if(!seen){seen=true;io.disconnect();}
+    },{threshold:.2});
+    io.observe(m);
+  }
 })();
