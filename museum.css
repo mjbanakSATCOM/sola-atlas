@@ -1,0 +1,35 @@
+/* Reformed Atlas – people museum hall (CSS 3D) */
+.museum{position:relative;margin:1.2rem 0 .6rem;border-radius:var(--r);overflow:hidden;background:#0d0a08;box-shadow:var(--sh);outline:none;user-select:none;touch-action:pan-y}
+.museum:focus-visible{box-shadow:0 0 0 3px var(--brass)}
+.mu-stage{height:min(72vh,620px);perspective:820px;perspective-origin:50% 42%;cursor:grab;overflow:hidden;position:relative}
+.mu-stage:active{cursor:grabbing}
+.mu-world{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.mu-wall,.mu-floor,.mu-ceil,.mu-end{position:absolute;transform-style:preserve-3d}
+.mu-wall{width:8000px;height:620px;top:-330px;left:-4000px;background:linear-gradient(#1c1411,#120d0b 70%,#0c0907),repeating-linear-gradient(90deg,transparent 0 599px,rgba(181,137,59,.08) 599px 600px);background-blend-mode:normal}
+.mu-wall.l{transform:translateX(-420px) rotateY(90deg)}
+.mu-wall.r{transform:translateX(420px) rotateY(-90deg)}
+.mu-floor{width:840px;height:8000px;left:-420px;top:-4000px;transform:translateY(290px) rotateX(90deg);background:repeating-linear-gradient(0deg,#2a1d15 0 118px,#22170f 118px 120px),#24180f;box-shadow:inset 0 0 200px #000}
+.mu-ceil{width:840px;height:8000px;left:-420px;top:-4000px;transform:translateY(-330px) rotateX(-90deg);background:#0a0806}
+.mu-end{width:840px;height:620px;left:-420px;top:-330px;background:radial-gradient(ellipse at 50% 40%,#3a2416,#120c09 70%)}
+.mu-end span{position:absolute;inset:0;display:grid;place-items:center;font:600 2rem var(--f-display);color:#b5893b;letter-spacing:.08em}
+.mu-ex{position:absolute;width:240px;left:-120px;top:-210px;transform-style:preserve-3d;transition:opacity .5s,filter .5s}
+.mu-ex[hidden]{display:none}
+.mu-ex button{all:unset;cursor:pointer;display:block;position:relative}
+.mu-frame{padding:14px;background:linear-gradient(135deg,#8a6526,#d9b066 40%,#7a5420 70%,#c69a4c);box-shadow:0 30px 50px -10px #000,inset 0 0 0 3px #4a3112}
+.mu-frame img{width:212px;height:265px;object-fit:cover;filter:sepia(.18) contrast(1.05);box-shadow:inset 0 0 0 8px #f3ecdc}
+.mu-light{position:absolute;left:-90px;right:-90px;top:-260px;height:720px;pointer-events:none;background:radial-gradient(ellipse 38% 46% at 50% 52%,rgba(255,214,150,.34),rgba(255,190,110,.12) 55%,transparent 72%);mix-blend-mode:screen}
+.mu-lamp{position:absolute;left:50%;top:-34px;width:70px;height:12px;margin-left:-35px;border-radius:6px;background:#2b2015;box-shadow:0 6px 24px 6px rgba(255,210,140,.55)}
+.mu-plaque{margin:18px auto 0;width:200px;padding:8px 10px;background:linear-gradient(#efe4c8,#d9c9a3);color:#14201c;text-align:center;font-family:var(--f-display);box-shadow:0 8px 16px -6px #000;border:1px solid #9b7a3a}
+.mu-plaque b{display:block;font-size:1rem;line-height:1.15}.mu-plaque small{font:500 .72rem var(--f-mono);color:#5e1824}
+.mu-ex.dim{filter:brightness(.55)}
+.mu-ex.on .mu-frame{box-shadow:0 30px 60px -10px #000,0 0 40px 4px rgba(255,200,120,.35),inset 0 0 0 3px #4a3112}
+.mu-panel{position:absolute;right:16px;bottom:16px;width:min(380px,calc(100% - 32px));background:rgba(243,236,220,.96);color:var(--ink);border-radius:10px;padding:14px 16px;border-top:4px solid var(--brass);box-shadow:0 20px 40px -10px #000;font-size:.92rem;line-height:1.5}
+.mu-panel .kicker{margin:0;font:500 .72rem var(--f-mono);color:var(--oxblood);text-transform:uppercase;letter-spacing:.08em}
+.mu-panel h3{margin:.15em 0 .1em;font-size:1.3rem}.mu-panel p{margin:.35em 0}
+.mu-hud{position:absolute;left:16px;bottom:16px;display:flex;gap:8px;align-items:center}
+.mu-hud button{background:rgba(20,14,10,.8);color:#f3ecdc;border:1px solid #b5893b;border-radius:999px;width:42px;height:42px;font-size:1.1rem;cursor:pointer}
+.mu-hud button:hover{background:#5e1824}
+.mu-hud span{color:#d9c9a3;font:500 .78rem var(--f-mono)}
+.mu-vign{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 45%,rgba(0,0,0,.65))}
+@media (max-width:700px){.mu-stage{height:440px;perspective:600px}.mu-panel{position:static;width:auto;margin:0;border-radius:0}.mu-hud{bottom:auto;top:12px}}
+#people-grid[hidden]{display:none}

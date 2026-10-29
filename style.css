@@ -275,3 +275,33 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .spine .st{margin:0;line-height:1;display:block;text-align:center;max-height:calc(var(--h) - 120px)}
 .spine::after{bottom:30px}
 .spine .sa{flex:0 0 auto;line-height:1;text-align:center}
+
+/* ===== HERO DRAFT (motion) — begin ===== */
+.hero{min-height:92vh;isolation:isolate}
+.hero-art{position:absolute;inset:0;overflow:hidden}
+.hero-art img{position:absolute;inset:-6% 0 -6% 25%;width:75%;height:112%;will-change:transform;transform:translate3d(0,var(--hp,0px),0) scale(1.08);animation:heroDrift 28s ease-in-out infinite alternate}
+@keyframes heroDrift{from{object-position:45% 40%}to{object-position:60% 55%}}
+.hero-art::before{background:linear-gradient(90deg,var(--ink) 0%,var(--ink) 28%,rgba(20,32,28,.8) 42%,rgba(20,32,28,.2) 65%,rgba(123,34,48,.28))}
+.hero-art::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 65% 45%,transparent 35%,rgba(10,16,14,.75) 100%),linear-gradient(0deg,var(--ink),transparent 30%)}
+.hero-inner{grid-column:1;z-index:3}
+.hero-fx{position:absolute;inset:0;z-index:2;pointer-events:none}
+.hero-rays{position:absolute;inset:-20% -10% auto 40%;height:140%;background:repeating-conic-gradient(from 200deg at 80% 0%,rgba(201,162,90,.10) 0 3deg,transparent 3deg 9deg);mask:radial-gradient(ellipse at 80% 0%,#000,transparent 70%);-webkit-mask:radial-gradient(ellipse at 80% 0%,#000,transparent 70%);animation:heroRays 14s ease-in-out infinite alternate;mix-blend-mode:screen}
+@keyframes heroRays{from{opacity:.35;transform:rotate(-2deg)}to{opacity:.8;transform:rotate(2deg)}}
+.hero-meridian{position:absolute;right:4%;top:50%;width:min(52vw,640px);transform:translateY(-50%);opacity:.22;fill:none;stroke:#c9a25a;stroke-width:1}
+.hero-meridian *{stroke-dasharray:1700;stroke-dashoffset:1700;animation:heroDraw 4s cubic-bezier(.6,0,.2,1) forwards}
+.hero-meridian ellipse:nth-of-type(1){animation-delay:.6s,4.6s;animation-name:heroDraw,heroSpin;animation-duration:4s,9s;animation-iteration-count:1,infinite;animation-direction:normal,alternate;transform-origin:300px 300px}
+.hero-meridian ellipse:nth-of-type(2){animation-delay:1s}.hero-meridian line{animation-delay:1.4s}
+@keyframes heroDraw{to{stroke-dashoffset:0}}
+@keyframes heroSpin{from{transform:scaleX(1)}to{transform:scaleX(.35)}}
+.hero-dust i{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:#e8d9b5;opacity:0;box-shadow:0 0 6px #c9a25a;animation:heroDust 16s linear infinite}
+.hero-dust i:nth-child(1){left:38%;animation-delay:0s}.hero-dust i:nth-child(2){left:46%;animation-delay:3s;animation-duration:20s}.hero-dust i:nth-child(3){left:54%;animation-delay:6s}.hero-dust i:nth-child(4){left:61%;animation-delay:1.5s;animation-duration:22s}.hero-dust i:nth-child(5){left:68%;animation-delay:8s}.hero-dust i:nth-child(6){left:74%;animation-delay:4.5s;animation-duration:18s}.hero-dust i:nth-child(7){left:80%;animation-delay:10s}.hero-dust i:nth-child(8){left:86%;animation-delay:2s;animation-duration:24s}.hero-dust i:nth-child(9){left:92%;animation-delay:7s}.hero-dust i:nth-child(10){left:58%;animation-delay:12s;width:2px;height:2px}.hero-dust i:nth-child(11){left:70%;animation-delay:14s;width:2px;height:2px}.hero-dust i:nth-child(12){left:50%;animation-delay:9s;width:2px;height:2px}
+@keyframes heroDust{0%{transform:translate(0,0);opacity:0}15%{opacity:.55}85%{opacity:.4}100%{transform:translate(40px,-90vh);opacity:0}}
+.hero-rule{display:block;width:220px;height:16px;margin:-.2em 0 1em;fill:none;stroke:#c9a25a;stroke-width:1.5}
+.hero-rule path{stroke-dasharray:260;stroke-dashoffset:260;animation:heroDraw 1.6s .9s ease forwards}
+.hero-anim .hero-inner>*{opacity:0;transform:translateY(18px);animation:heroIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-anim .kicker{animation-delay:.15s!important}.hero-anim h1{animation-delay:.35s!important}.hero-anim .hero-rule{animation-delay:.6s!important}.hero-anim .lede{animation-delay:.8s!important}.hero-anim .hint{animation-delay:1s!important}.hero-anim .hero-ctas{animation-delay:1.2s!important}
+@keyframes heroIn{to{opacity:1;transform:none}}
+.hero .btn{transition:transform .25s,box-shadow .25s}.hero .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,162,90,.25)}
+@media (max-width:980px){.hero-art{inset:0;opacity:.35}.hero-art img{inset:-6% 0;width:100%}.hero-meridian{right:-20%;width:110vw;opacity:.12}.hero-rays{inset:-20% -30% auto 0}}
+@media (prefers-reduced-motion:reduce){.hero-art img,.hero-rays,.hero-dust i,.hero-meridian *,.hero-rule path,.hero-anim .hero-inner>*{animation:none!important;opacity:revert;transform:none;stroke-dashoffset:0}.hero-dust{display:none}.hero-anim .hero-inner>*{opacity:1}}
+/* ===== HERO DRAFT (motion) — end ===== */
