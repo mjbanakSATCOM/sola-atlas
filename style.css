@@ -73,6 +73,12 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .sola-panel{background:var(--paper);border-radius:var(--r);padding:clamp(24px,4vw,48px);border-left:6px solid var(--oxblood);box-shadow:var(--sh);min-height:220px}
 .big-latin{font:italic 400 clamp(2.2rem,5vw,3.6rem)/1 var(--f-display);color:var(--oxblood);margin:0 0 .3em}
 .lead{font-size:1.3rem}
+.sv-h{font:500 .72rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--verdigris);margin:1.4em 0 .6em}.sv-h small{color:var(--muted)}
+.sola-verses{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.sola-verses li{background:var(--vellum);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.sola-verses blockquote{margin:0 0 .4em;font-style:italic;line-height:1.45}.sola-verses a{font:500 .8rem var(--f-mono);color:var(--oxblood)}
+.sola-quote{margin:1.4em 0 0;padding:14px 18px;border-left:3px solid var(--brass);background:var(--vellum);border-radius:0 6px 6px 0}
+.sola-quote blockquote{margin:0;font:italic 1.15rem/1.4 var(--f-display)}.sola-quote figcaption{margin-top:.5em;font-size:.85rem;color:var(--muted)}
 .meta{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;font-size:.95rem}.meta dt{font:500 .72rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--verdigris);padding-top:.3em}.meta dd{margin:0}
 
 /* confessions */
@@ -208,7 +214,7 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 .doc-card:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--brass)}
 .doc-thumb{flex:0 0 110px;padding:0;border:2px solid var(--line);border-radius:6px;background:#fff;cursor:zoom-in;overflow:hidden;transition:border-color .2s,transform .2s}
 .doc-thumb:hover,.doc-thumb:focus-visible{border-color:var(--brass);transform:scale(1.03)}
-.doc-thumb img{display:block;width:100%;height:auto}
+.doc-thumb{align-self:flex-start;line-height:0}.doc-thumb img{display:block;width:100%;height:auto}
 .doc-body h4{font-family:var(--f-display);margin:0 0 .3rem;font-size:1.05rem;color:var(--ink)}
 .doc-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
 .btn-doc{font:600 .9rem var(--f-body);padding:.5rem .9rem;border-radius:999px;border:1.5px solid var(--oxblood);color:var(--oxblood);background:transparent;cursor:pointer;text-decoration:none;transition:background .15s,color .15s,transform .1s,box-shadow .15s}

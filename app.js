@@ -17,7 +17,7 @@ var tabs=$("#sola-tabs"),panel=$("#sola-panel");
 S.solas.forEach(function(s,i){var b=el("button",{role:"tab",id:"tab-"+s.key,"aria-selected":"false",tabindex:"-1"},'<span>'+s.latin+'</span><small>'+s.en+'</small>');b.addEventListener("click",function(){showSola(i)});tabs.appendChild(b);});
 function showSola(i){var s=S.solas[i];$$("button",tabs).forEach(function(b,j){b.setAttribute("aria-selected",j===i);b.tabIndex=j===i?0:-1});
   panel.setAttribute("aria-labelledby","tab-"+s.key);
-  panel.innerHTML='<p class="big-latin">'+s.latin+'</p><p class="lead">'+s.intro+'</p><p class="d2">'+s.study+'</p><dl class="d2 meta"><dt>Key text</dt><dd>'+s.text+'</dd><dt>Confessions</dt><dd>'+s.conf+'</dd></dl><p class="d3">'+src(s.src,"Read more")+'</p>';
+  panel.innerHTML='<p class="big-latin">'+s.latin+'</p><p class="lead">'+s.intro+'</p><p class="d2">'+s.study+'</p><dl class="d2 meta"><dt>Key text</dt><dd>'+s.text+'</dd><dt>Confessions</dt><dd>'+s.conf+'</dd></dl>'+(s.verses?'<h4 class="sv-h">Supporting verses <small>(KJV)</small></h4><ul class="sola-verses">'+s.verses.map(function(v){return '<li><blockquote>“'+v.t+'”</blockquote><a href="'+v.u+'" target="_blank" rel="noopener">'+v.ref+'</a></li>'}).join('')+'</ul>':'')+(s.quote?'<figure class="sola-quote"><blockquote>“'+s.quote.t+'”</blockquote><figcaption>— '+s.quote.by+' · <a href="'+s.quote.u+'" target="_blank" rel="noopener">source</a></figcaption></figure>':'')+'<p class="d3">'+src(s.src,"Read more")+'</p>';
   panel.classList.remove("pop");void panel.offsetWidth;panel.classList.add("pop");}
 roveKeys(tabs,"button",function(b){b.click()});showSola(0);
 
