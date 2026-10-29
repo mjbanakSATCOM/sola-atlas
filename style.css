@@ -326,3 +326,17 @@ h2{font-size:clamp(2rem,4.5vw,3.1rem);letter-spacing:-.01em}h3{font-size:1.5rem}
 @media (max-width:640px){.shelves{padding:16px 6px 22px}.shelf-plate{font-size:.5rem;letter-spacing:.14em}}
 /* full spine titles: fitted by JS, varied type */
 .spine .st,.shelves .spine .st{white-space:normal;overflow:visible;text-overflow:clip;max-height:none;max-width:none;line-height:1.05;text-wrap:balance;font-size:var(--fs,.78rem);font-family:var(--ff,var(--f-display));font-style:var(--fi,normal);font-weight:var(--fw,600);letter-spacing:var(--ls,0);text-transform:var(--tt,none)}
+/* iPhone Pro Max class (≈430px) mobile fit */
+html,body{overflow-x:clip}
+.topbar{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));padding-top:max(8px,env(safe-area-inset-top))}
+footer,.footer{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+@media (max-width:480px){
+ .sec,section{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+ .shelves .shelf{gap:3px}
+ #bookshelf .spine .sa{display:none}
+ .shelves .spine{flex-grow:1!important}
+ .shelf-plate{font-size:.62rem}
+ .hymn-tag{font-size:.72rem}
+ .btn,button.btn,a.btn{min-height:44px}
+ img,video,canvas,svg{max-width:100%}
+}

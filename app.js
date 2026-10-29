@@ -80,7 +80,7 @@ S.books.forEach(function(b,i){var s=el("button",{class:"spine",role:"listitem","
     bc.innerHTML='<div class="cover" style="--c:'+b.c+'"><span>'+b.t+'</span><small>'+b.a+'</small></div><div><p class="kicker">'+b.cat+' · '+b.y+'</p><h3>'+b.t+'</h3><p class="by">'+b.a+'</p><p>'+b.about+'</p><p class="d2"><b>Where to start:</b> '+b.start+'</p>'+src(b.src,"Read / learn more")+'</div>';
     bc.classList.remove("pop");void bc.offsetWidth;bc.classList.add("pop");});spines.push(s);});
 var shelfLbl={all:"Shelf",theology:"Theology",commentary:"Commentaries",puritan:"Puritan classics",devotional:"Devotional",biography:"Biography"};
-function layShelves(f){shelf.innerHTML="";var row;spines.filter(function(s){s.hidden=!(f==="all"||s.dataset.cat===f);return !s.hidden}).forEach(function(s,i){if(i%16===0){row=el("div",{class:"shelf",role:"list"});shelf.appendChild(row)}s.hidden=false;row.appendChild(s)});$$(".shelf",shelf).forEach(function(r,k){r.appendChild(el("span",{class:"shelf-plate","aria-hidden":"true"},(shelfLbl[f]||"Shelf")+" · "+["I","II","III","IV","V"][k]));$$(".spine",r).forEach(function(sp,j){sp.style.transitionDelay="0s,0s,0s,0s,"+(j*45+k*120)+"ms,"+(j*45+k*120)+"ms"})});if(window._sd)shelf.appendChild(window._sd);}
+function layShelves(f){window._shelfF=f;shelf.innerHTML="";var row;spines.filter(function(s){s.hidden=!(f==="all"||s.dataset.cat===f);return !s.hidden}).forEach(function(s,i){if(i%(matchMedia("(max-width:480px)").matches?8:16)===0){row=el("div",{class:"shelf",role:"list"});shelf.appendChild(row)}s.hidden=false;row.appendChild(s)});$$(".shelf",shelf).forEach(function(r,k){r.appendChild(el("span",{class:"shelf-plate","aria-hidden":"true"},(shelfLbl[f]||"Shelf")+" · "+["I","II","III","IV","V","VI","VII","VIII"][k]));$$(".spine",r).forEach(function(sp,j){sp.style.transitionDelay="0s,0s,0s,0s,"+(j*45+k*120)+"ms,"+(j*45+k*120)+"ms"})});if(window._sd)shelf.appendChild(window._sd);}
 layShelves("all");
 filterChips("#shelf-chips",layShelves);
 $(".spine",shelf).click();
@@ -152,6 +152,6 @@ function fit(){document.querySelectorAll('#bookshelf .spine').forEach(function(s
  var sa=sp.querySelector('.sa');var avail=sp.clientHeight-72, across=sp.clientWidth-(sa?sa.offsetWidth:0)-10; if(avail<20)return;st.style.height='auto';st.style.maxHeight=avail+'px';
  var fs=15;st.style.setProperty('--fs',fs+'px');
  while(fs>6&&(st.scrollHeight>avail+1||st.offsetWidth>across)){fs-=.5;st.style.setProperty('--fs',fs+'px')}});}
-window._fitSpines=fit;var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,150)});
+window._fitSpines=fit;var _nm=matchMedia('(max-width:480px)');_nm.addEventListener&&_nm.addEventListener('change',function(){try{layShelves(window._shelfF||'all')}catch(e){}setTimeout(fit,50)});var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,150)});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,50);
 document.querySelectorAll('#shelf-chips button,#shelf-chips [data-f]').forEach(function(b){b.addEventListener('click',function(){setTimeout(fit,30)})});})();
