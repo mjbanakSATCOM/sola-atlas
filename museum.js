@@ -29,9 +29,10 @@
     var p=S.people[vis[cur]];panel.innerHTML='<p class="kicker">'+p.role+'</p><h3>'+p.n+'</h3><p class="small" style="margin:0">'+p.d+'</p><p>'+p.bio+'</p><a href="'+p.src+'" target="_blank" rel="noopener">Biography ↗</a>';
     if(!feat.hidden)fill();
     count.textContent="Exhibit "+(cur+1)+" of "+vis.length;}
+  function step(d){go(cur+d);if(feat.hidden)feature(ex[vis[cur]]);else if(fig.animate)fig.animate([{opacity:.3,transform:"translateX("+(d*40)+"px) scale(.96)"},{opacity:1,transform:"none"}],{duration:380,easing:"ease-out"});}
   function filter(f){vis=[];ex.forEach(function(e,i){var ok=f==="all"||e.dataset.era===f;e.hidden=!ok;if(ok)vis.push(i)});layout();go(0);}
-  m.querySelectorAll(".mu-hud button").forEach(function(b){b.addEventListener("click",function(){go(cur+ +b.dataset.d)})});
-  m.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowUp"){go(cur+1);e.preventDefault()}else if(e.key==="ArrowLeft"||e.key==="ArrowDown"){go(cur-1);e.preventDefault()}});
+  m.querySelectorAll(".mu-hud button").forEach(function(b){b.addEventListener("click",function(){step(+b.dataset.d)})});
+  m.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowUp"){step(1);e.preventDefault()}else if(e.key==="ArrowLeft"||e.key==="ArrowDown"){step(-1);e.preventDefault()}});
   var st=m.querySelector(".mu-stage"),x0=null;
   st.addEventListener("pointerdown",function(e){x0=e.clientX});
   window.addEventListener("pointerup",function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));});
