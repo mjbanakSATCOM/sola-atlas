@@ -5,12 +5,9 @@ function el(t,a,h){var e=document.createElement(t);if(a)for(var k in a){if(k==="
 function src(u,l){return '<a class="src" href="'+u+'" target="_blank" rel="noopener">'+(l||"Source")+'</a>';}
 function roveKeys(container,sel,activate){container.addEventListener("keydown",function(e){var items=$$(sel,container).filter(function(b){return b.offsetParent!==null});var i=items.indexOf(document.activeElement);if(i<0)return;var n=null;if(e.key==="ArrowRight"||e.key==="ArrowDown")n=(i+1)%items.length;if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=(i-1+items.length)%items.length;if(n!=null){e.preventDefault();items[n].focus();activate(items[n]);}});}
 
-/* depth */
-function setDepth(d){document.body.dataset.depth=d;$$(".depth button").forEach(function(b){b.setAttribute("aria-checked",b.dataset.d===d?"true":"false")});
-  if(d==="3")$$("details.layer").forEach(function(x){x.open=true});
-  try{localStorage.setItem("sola-depth",d)}catch(e){} }
-$$(".depth button").forEach(function(b){b.addEventListener("click",function(){setDepth(b.dataset.d)})});
-try{var sd=localStorage.getItem("sola-depth");if(sd)setDepth(sd)}catch(e){}
+/* full depth always */
+$$("details.layer").forEach(function(x){x.open=true});
+try{localStorage.removeItem("sola-depth")}catch(e){}
 
 /* solas */
 var tabs=$("#sola-tabs"),panel=$("#sola-panel");
