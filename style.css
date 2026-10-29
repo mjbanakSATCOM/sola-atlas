@@ -265,3 +265,8 @@ body[data-depth="1"] .d2,body[data-depth="1"] .d3,body[data-depth="2"] .d3{displ
 @media (prefers-reduced-motion:reduce){.cover{transform:none}}
 
 .shelves{display:flex;flex-direction:column;gap:22px}.shelves .shelf{justify-content:center;flex-wrap:nowrap}.shelves .spine{flex:0 1 auto;min-width:0}
+/* 16 per shelf, packed flush */
+.shelves .shelf{justify-content:stretch;gap:3px;padding:20px 10px 0}
+.shelves .spine{flex:1 1 0;min-width:0;max-width:none}
+.shelves .spine:nth-child(3n){flex-grow:1.12}.shelves .spine:nth-child(4n+1){flex-grow:.9}
+.shelves .spine .st{font-size:.78rem}
