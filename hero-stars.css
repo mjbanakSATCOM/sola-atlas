@@ -17,9 +17,9 @@
 /* HERO THESES DRAFT: faded 95 Theses broadsheet behind text panel */
 .hero-stars{z-index:4}
 
-.hero-theses{position:absolute;left:0;top:0;bottom:0;width:44%;margin:0;z-index:2;pointer-events:none;opacity:.26;mix-blend-mode:screen;filter:sepia(.35) contrast(1.08);-webkit-mask:linear-gradient(90deg,#000 0%,#000 60%,transparent 100%),linear-gradient(0deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask:linear-gradient(90deg,#000 0%,#000 60%,transparent 100%),linear-gradient(0deg,transparent,#000 18%,#000 82%,transparent);mask-composite:intersect}
+.hero-theses{position:absolute;left:0;top:0;bottom:0;width:48%;margin:0;z-index:2;pointer-events:none;opacity:.26;mix-blend-mode:screen;filter:sepia(.35) contrast(1.08);-webkit-mask:linear-gradient(90deg,#000 0%,#000 72%,transparent 100%),linear-gradient(0deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask:linear-gradient(90deg,#000 0%,#000 72%,transparent 100%),linear-gradient(0deg,transparent,#000 18%,#000 82%,transparent);mask-composite:intersect}
 .hero-theses video{width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:980px){.hero-theses{width:100%;opacity:.18}}
 @media (prefers-reduced-motion: reduce){.hero-theses{display:none}}
-.hero-inner::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 35% 50%,rgba(8,6,4,.74),rgba(8,6,4,.5) 58%,transparent 88%)}
+.hero-inner::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 35% 50%,rgba(8,6,4,.74),rgba(8,6,4,.5) 62%,transparent 94%)}
 .hero-inner h1,.hero-inner p{text-shadow:0 2px 12px rgba(0,0,0,.75),0 1px 2px rgba(0,0,0,.6)}
