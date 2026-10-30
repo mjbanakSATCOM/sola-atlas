@@ -550,7 +550,6 @@ html,body{overflow-x:clip}
 /* XIII Learn — darker blue */
 #path{--bg:none;background:#14223d}
 #path.sec.dark::before{z-index:0;background-image:linear-gradient(rgba(20,34,68,.92),rgba(14,26,52,.96))}
-#path .path,#path .quiz,#path .quiz>*{color:var(--ink,#1f1b16)}
-#path .path a,#path .quiz a{color:#8a5a12}
-#path .small{color:#c9c2b0}
-#path .quiz{background:rgba(251,247,238,.96);border-radius:var(--r);padding:1.25rem 1.4rem;border:1px solid rgba(181,137,59,.28)}
+#path .path{color:var(--ink,#1f1b16)}
+#path .path a{color:#8a5a12}
+#path .head>p,#path .small{color:#c9c2b0}
