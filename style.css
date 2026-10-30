@@ -453,3 +453,5 @@ html,body{overflow-x:clip}
 #hymns::after{content:"";position:absolute;top:0;right:0;bottom:0;width:min(34vw,420px);background:url(assets/bg/bg-hymns-luther.jpg) center top/cover no-repeat;opacity:.22;mix-blend-mode:luminosity;-webkit-mask-image:linear-gradient(to left,#000 40%,transparent);mask-image:linear-gradient(to left,#000 40%,transparent);pointer-events:none;z-index:-1}
 #hymns .head h2{color:#f4ecd8}#hymns .head>p{color:#c9c2b0}
 #hymns .hymn-card{color:var(--ink,#1f1b16)}#hymns .hymn-card a.hymn-src{color:var(--oxblood)}
+
+.vid-pairs{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}.vid-pair{display:flex;align-items:center;gap:.6rem}.vid-thumb img{display:block;width:140px;aspect-ratio:16/9;object-fit:cover;border-radius:8px}@media(max-width:600px){.vid-pairs{flex-direction:column;align-items:center}}
