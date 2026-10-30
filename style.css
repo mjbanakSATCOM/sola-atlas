@@ -552,9 +552,10 @@ html,body{overflow-x:clip}
 #england .scot-h{color:#f1c97a}
 #england .back a{color:#f1c97a}
 
-/* XIII Learn — darker blue */
-#path{--bg:none;background:#14223d}
+/* XIII Learn — darker blue behind placemats */
+#path{--bg:none;background:#14223d;position:relative}
 #path.sec.dark::before{z-index:0;background-image:linear-gradient(rgba(20,34,68,.92),rgba(14,26,52,.96))}
+#path>.wrap{position:relative;z-index:1}
 #path .path{color:var(--ink,#1f1b16)}
 #path .path a{color:#8a5a12}
 #path .head>p,#path .small{color:#c9c2b0}
