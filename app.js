@@ -88,12 +88,12 @@ var shelf=$("#bookshelf"),bc=$("#book-card"),spines=[];
 S.books.forEach(function(b,i){var s=el("button",{class:"spine",role:"listitem","data-cat":b.cat,style:"--c:"+b.c+";--h:"+b.h+"px","aria-label":b.t+" by "+b.a},'<span class="st">'+b.t+'</span><span class="sa">'+b.a.split(" ").slice(-1)[0]+'</span>');
   s.addEventListener("click",function(){$$(".spine",shelf).forEach(function(x){x.classList.toggle("out",x===s)});
     bc.innerHTML='<div class="cover" style="--c:'+b.c+'"><span>'+b.t+'</span><small>'+b.a+'</small></div><div><p class="kicker">'+b.cat+' · '+b.y+'</p><h3>'+b.t+'</h3><p class="by">'+b.a+'</p><p>'+b.about+'</p><p class="d2"><b>Where to start:</b> '+b.start+'</p>'+src(b.src,"Read / learn more")+'</div>';
-    bc.classList.remove("pop");void bc.offsetWidth;bc.classList.add("pop");sparkle(s);});spines.push(s);});
+    bc.classList.remove("pop");void bc.offsetWidth;bc.classList.add("pop");sparkle(s);if(window._shelfReady)flyBook(s,b);});spines.push(s);});
 var shelfLbl={all:"Shelf",theology:"Theology",commentary:"Commentaries",puritan:"Puritan classics",devotional:"Devotional",biography:"Biography"};
 function layShelves(f){window._shelfF=f;shelf.innerHTML="";var row;spines.filter(function(s){s.hidden=!(f==="all"||s.dataset.cat===f);return !s.hidden}).forEach(function(s,i){if(i%((window.matchMedia&&matchMedia("(max-width:480px)").matches)?8:16)===0){row=el("div",{class:"shelf",role:"list"});shelf.appendChild(row)}s.hidden=false;row.appendChild(s)});$$(".shelf",shelf).forEach(function(r,k){r.appendChild(el("span",{class:"shelf-plate","aria-hidden":"true"},(shelfLbl[f]||"Shelf")+" · "+["I","II","III","IV","V","VI","VII","VIII"][k]));$$(".spine",r).forEach(function(sp,j){sp.style.transitionDelay="0s,0s,0s,0s,"+(j*45+k*120)+"ms,"+(j*45+k*120)+"ms"})});if(window._sd)shelf.appendChild(window._sd);if(window._tl)shelf.appendChild(window._tl);}
 layShelves("all");
 filterChips("#shelf-chips",layShelves);
-$(".spine",shelf).click();
+$(".spine",shelf).click();window._shelfReady=true;
 /* shelf wow: dust + staggered entrance */
 (function(){var d=el("div",{class:"shelf-dust","aria-hidden":"true"});for(var i=0;i<14;i++){var p=document.createElement("i");p.style.left=(5+i*6.7)+"%";p.style.animationDelay=(i*1.3)+"s";p.style.animationDuration=(14+i%5*2)+"s";d.appendChild(p)}window._sd=d;shelf.appendChild(d);
 var mq=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(mq||!("IntersectionObserver" in window))return;shelf.classList.add("pre");
@@ -165,3 +165,10 @@ function fit(){document.querySelectorAll('#bookshelf .spine').forEach(function(s
 window._fitSpines=fit;var _nm=window.matchMedia&&matchMedia('(max-width:480px)');_nm&&_nm.addEventListener&&_nm.addEventListener('change',function(){try{layShelves(window._shelfF||'all')}catch(e){}setTimeout(fit,50)});var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,150)});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,50);
 document.querySelectorAll('#shelf-chips button,#shelf-chips [data-f]').forEach(function(b){b.addEventListener('click',function(){setTimeout(fit,30)})});})();
+
+function flyBook(s,b){var bc=document.getElementById("book-card");if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;var cv=bc.querySelector(".cover");if(!cv||!s.animate)return;var a=s.getBoundingClientRect(),t=cv.getBoundingClientRect();
+var f=s.cloneNode(true);f.className="spine fly-book";f.removeAttribute("aria-label");f.setAttribute("aria-hidden","true");f.style.cssText="--c:"+b.c+";position:fixed;left:"+a.left+"px;top:"+a.top+"px;width:"+a.width+"px;height:"+a.height+"px;margin:0;z-index:999;pointer-events:none;transform-origin:center";document.body.appendChild(f);
+cv.style.opacity="0";var dx=t.left+t.width/2-(a.left+a.width/2),dy=t.top+t.height/2-(a.top+a.height/2),sc=Math.max(t.height/a.height,.6);
+var an=f.animate([{transform:"translate(0,0) rotate(0) scale(1)",filter:"drop-shadow(0 0 0 gold)"},{offset:.18,transform:"translate(0,-40px) rotate(-8deg) scale(1.05)",filter:"drop-shadow(0 0 14px rgba(255,215,120,.9))"},{offset:.6,transform:"translate("+dx*.6+"px,"+(dy*.6-120)+"px) rotate(200deg) scale("+(1+sc)/2+")",filter:"drop-shadow(0 0 22px rgba(255,215,120,.9))"},{transform:"translate("+dx+"px,"+dy+"px) rotate(360deg) scale("+sc+")",filter:"drop-shadow(0 0 0 gold)",opacity:.2}],{duration:1100,easing:"cubic-bezier(.45,.05,.3,1)"});
+var tr=setInterval(function(){var r=f.getBoundingClientRect(),p=document.createElement("i");p.className="fly-spk";p.style.left=(r.left+r.width/2)+"px";p.style.top=(r.top+r.height/2)+"px";document.body.appendChild(p);setTimeout(function(){p.remove()},800)},50);
+an.onfinish=function(){clearInterval(tr);f.remove();cv.style.opacity="";cv.animate([{transform:"scale(1.08)",boxShadow:"0 0 30px rgba(255,215,120,.8)"},{transform:"scale(1)",boxShadow:"0 0 0 rgba(255,215,120,0)"}],{duration:500,easing:"ease-out"});sparkle(bc)};}
