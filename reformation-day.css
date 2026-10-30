@@ -23,7 +23,12 @@ html.refday .rd-fx{display:block;position:fixed;inset:0;pointer-events:none;z-in
 .rd-scrap{width:34px;height:42px;background:#efe2c0;border:1px solid #c9b383;border-radius:2px;color:#5a4320;font:700 13px Georgia,serif;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,.2);opacity:.85}
 .rd-spark{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#fff6d0,#e8c46a 60%,transparent 70%)}
 .rd-conf{width:8px;height:12px;background:#e8c46a;opacity:.8}
-.rd-sticker{width:56px;height:56px;background:url(./assets/refday-stickers.png?v=1) center/contain no-repeat}
+.rd-sticker{width:72px;height:72px;background:url(./assets/refday-stickers.png?v=1) no-repeat;background-size:220% auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.35))}
+.rd-sticker.s1{background-position:8% 8%}
+.rd-sticker.s2{background-position:92% 8%}
+.rd-sticker.s3{background-position:8% 55%}
+.rd-sticker.s4{background-position:92% 55%}
+.rd-sticker.s5{background-position:50% 95%}
 @keyframes rd-fall{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(110vh) rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.rd-fx{display:none!important}}
 @media (max-width:640px){html.refday .rd-banner{font-size:13px;padding:8px 36px}}

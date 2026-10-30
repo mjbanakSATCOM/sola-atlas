@@ -1,6 +1,6 @@
 /* Reformation Day temporary mode: Fri 2026-10-30 20:00 → Sun 2026-11-01 23:00 America/New_York */
 (function(){
-  var START='2026-10-30 20:00:00', END='2026-11-01 23:00:00';
+  var START='2026-10-30 20:00:00', END='2026-11-01 23:01:00';
   function nyNow(){
     var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
     return p.year+'-'+p.month+'-'+p.day+' '+p.hour+':'+p.minute+':'+p.second;
@@ -35,7 +35,7 @@
     if(r<.3){e.className='rd-p rd-scrap';e.textContent='95'}
     else if(r<.65)e.className='rd-p rd-spark';
     else if(r<.95||!fx.dataset.stickers)e.className='rd-p rd-conf';
-    else e.className='rd-p rd-sticker';
+    else{e.className='rd-p rd-sticker s'+ (1+Math.floor(Math.random()*5));}
     var d=9+Math.random()*10;e.style.left=(Math.random()*100)+'vw';e.style.animationDuration=d+'s';
     if(e.className.indexOf('conf')>-1)e.style.background=['#e8c46a','#f4ead2','#c9a24a','#8fa6c9'][Math.floor(Math.random()*4)];
     fx.appendChild(e);setTimeout(function(){e.remove()},d*1000);
