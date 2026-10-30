@@ -513,11 +513,11 @@ html,body{overflow-x:clip}
 @media (max-width:640px){.shelves{margin-top:64px}}
 /* v22: Latin motto, torches, Gutenberg shelf video */
 .ref-hero .head .ref-motto-en{font:italic clamp(1.1rem,2.5vw,1.6rem)/1.3 var(--f-display);color:var(--brass);letter-spacing:.06em;margin:-.2em 0 1rem}
-.ref-grid-stage{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1.5rem}
-.ref-torch{width:auto;height:clamp(110px,14vw,170px);animation:torchFlicker 2.6s infinite alternate ease-in-out;filter:drop-shadow(0 0 18px rgba(255,170,60,.55))}
-.ref-torch.r{transform:scaleX(-1);animation-delay:-1.3s}
+.ref-grid-stage{position:relative;display:grid;grid-template-columns:clamp(60px,6vw,96px) minmax(0,1fr) clamp(60px,6vw,96px);align-items:start;gap:1.25rem}
+.ref-hero img.ref-torch{display:block;width:100%;height:auto;max-height:170px;object-fit:contain;position:sticky;top:30vh;margin-top:2rem;animation:torchFlicker 2.6s infinite alternate ease-in-out;filter:drop-shadow(0 0 18px rgba(255,170,60,.55))}
+.ref-hero img.ref-torch.r{transform:scaleX(-1);animation-delay:-1.3s}
 @keyframes torchFlicker{0%{opacity:1;filter:brightness(1) drop-shadow(0 0 14px rgba(255,170,60,.45))}25%{opacity:.9;filter:brightness(1.15) drop-shadow(0 0 24px rgba(255,180,70,.7))}50%{opacity:.97;filter:brightness(.95) drop-shadow(0 0 12px rgba(255,150,50,.4))}75%{opacity:.88;filter:brightness(1.2) drop-shadow(0 0 28px rgba(255,190,80,.75))}100%{opacity:1;filter:brightness(1.05) drop-shadow(0 0 18px rgba(255,170,60,.55))}}
-@media (max-width:720px){.ref-grid-stage{grid-template-columns:1fr}.ref-torch{display:none}}
+@media (max-width:720px){.ref-grid-stage{grid-template-columns:1fr}.ref-hero img.ref-torch{display:none}}
 #shelf{--bg:none}
 #shelf.sec.dark.ink::before{z-index:0;background-image:linear-gradient(rgba(20,32,28,.72),rgba(10,16,14,.84))}
 #shelf .shelf-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;pointer-events:none}
