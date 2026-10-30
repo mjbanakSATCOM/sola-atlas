@@ -60,6 +60,7 @@ var ig=sv("g",{"clip-path":"url(#mg-ins)"});ig.appendChild(drawLand(MD.ne,"land"
 var it=sv("text",{x:600,y:340,class:"inset-label"});it.textContent="NEW ENGLAND";svg.appendChild(it);
 var q2=projN(-70.0,41.0);lbl(q2[0],q2[1],"Atlantic","sea-label sm");
 var sc=sv("text",{x:16,y:510,class:"map-credit"});sc.textContent="Modern coastlines & borders for orientation · Natural Earth";svg.appendChild(sc);
+(function(){var a=projE(-4.2,50.4),b=projN(-70.6,42.15);var d="M"+a[0].toFixed(1)+","+a[1].toFixed(1)+" C-10,"+(a[1]+90)+" 120,512 360,508 S560,"+(b[1]+40)+" "+b[0].toFixed(1)+","+b[1].toFixed(1);var rg=sv("g",{class:"atl-route","aria-hidden":"true"});rg.appendChild(sv("path",{d:d,class:"atl-path"}));rg.appendChild(sv("path",{d:d,class:"atl-flow"}));var t=sv("text",{x:70,y:440,class:"atl-label","text-anchor":"middle"});t.textContent="to New England →";rg.appendChild(t);svg.appendChild(rg);})();
 Object.keys(S.places).forEach(function(k){var p=S.places[k],xy=p.ne?projN(p.lon,p.lat):projE(p.lon,p.lat);
   var gg=sv("g",{class:"city",tabindex:"0",role:"button","data-k":k,"aria-label":p.n,transform:"translate("+xy[0].toFixed(1)+","+xy[1].toFixed(1)+")"});
   gg.appendChild(sv("circle",{r:15,class:"halo"}));gg.appendChild(sv("circle",{r:7.5,class:"ring"}));gg.appendChild(sv("circle",{r:4.5,class:"dot"}));

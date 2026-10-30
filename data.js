@@ -99,8 +99,6 @@ window.SOLA = {
     { y:1689, t:"Second London Baptist Confession", d:"Particular Baptists publicly endorse their confession after the Act of Toleration.", place:"london", src:"https://en.wikipedia.org/wiki/1689_Baptist_Confession_of_Faith" },
     { y:1740, t:"Whitefield in New England", d:"George Whitefield tours New England, preaching outdoors in Boston to thousands and at Northampton at Edwards's invitation.", place:"boston", src:"https://en.wikipedia.org/wiki/First_Great_Awakening" },
     { y:1741, t:"Edwards and the Great Awakening", d:"Jonathan Edwards preaches 'Sinners in the Hands of an Angry God' at Enfield, Connecticut, on 8 July 1741, during the revival.", place:"enfield", src:"https://en.wikipedia.org/wiki/Jonathan_Edwards" },
-    { id:"tennent", n:"Gilbert Tennent", d:"1703–1764", role:"Presbyterian revivalist", bio:"Scotch-Irish Presbyterian and a leader of the Great Awakening. His sermon 'The Danger of an Unconverted Ministry' helped split the Old Side and New Side.", src:"https://en.wikipedia.org/wiki/Gilbert_Tennent" },
-    { id:"whitefield", n:"George Whitefield", d:"1714–1770", role:"Evangelist", bio:"Anglican open-air preacher whose American tours of 1739–40 spread the Great Awakening from Philadelphia to Boston.", src:"https://en.wikipedia.org/wiki/George_Whitefield" }
   ],
   places: {
     oxford:{img:"./assets/places/oxford.jpg",lab:[-10,16,"end"],n:"Oxford",lon:-1.26,lat:51.75,note:"Wycliffe taught here; Latimer and Ridley (1555) and Cranmer (1556) were burned here."},

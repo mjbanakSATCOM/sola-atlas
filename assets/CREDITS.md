@@ -43,3 +43,7 @@ All from Wikimedia Commons, resized to 1200px wide.
 - `northampton.jpg` — *First Church, Main Street, Northampton, 2011.jpg* — chipmunk_1 — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File:First_Church,_Main_Street,_Northampton,_2011.jpg
 
 - `bg/bg-hymns-luther.jpg` — Martin Luther, *Ein feste Burg ist unser Gott*, in Johann Spangenberg's Gesangbuch, Magdeburg 1545. Public domain. https://commons.wikimedia.org/wiki/File:Ein_feste_Burg_1545.jpg
+
+- `people/whitefield.jpg` — Robert Hunter (possibly), *Reverend George Whitefield*, Mansfield College, Oxford. Public domain (18th c.). https://commons.wikimedia.org/wiki/File:Robert_Hunter_(c.1715-1720-c.1803)_(possibly)_-_Reverend_George_Whitefield_(1714%E2%80%931770),_MA_-_72_-_Mansfield_College.jpg
+- `people/tennent.jpg` — Jacob Eichholtz, *Gilbert Tennent*, Princeton University Art Museum. Public domain. https://commons.wikimedia.org/wiki/File:Jacob_Eichholtz_-_Gilbert_Tennent_(1703%E2%80%931764),_Trustee_(1747%E2%80%9364)_-_PP10_-_Princeton_University_Art_Museum.jpg
+- `audio/ein-feste-burg.mp3` — "Ein feste Burg" performed by the United States Army Band, Dec 2018 (US Government work). Public domain. https://commons.wikimedia.org/wiki/File:%22Ein_feste_Burg%22_performed_by_the_United_States_Army_Band_in_December_2018.oga
