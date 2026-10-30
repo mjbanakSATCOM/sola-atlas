@@ -528,3 +528,11 @@ html,body{overflow-x:clip}
 #reformation.ref-hero::before{z-index:0;filter:none;background-image:linear-gradient(90deg,rgba(20,32,28,.18) 0%,rgba(20,32,28,.35) 14%,rgba(20,32,28,.82) 30%,rgba(20,32,28,.9) 50%,rgba(20,32,28,.82) 70%,rgba(20,32,28,.35) 86%,rgba(20,32,28,.18) 100%)}
 @media (max-width:720px){#reformation.ref-hero::before{background-image:linear-gradient(rgba(20,32,28,.82),rgba(20,32,28,.9))}}
 @media (prefers-reduced-motion:reduce){#reformation .ref-bg-video{display:none}#reformation{--bg:url(assets/bg/bg-reformation-day.jpg)}#reformation.ref-hero::before{background-image:linear-gradient(rgba(20,32,28,.90),rgba(20,32,28,.95)),var(--bg)}}
+/* v28: England Tyndale ship video */
+#england{--bg:none;background:#14223d;position:relative;overflow:clip;isolation:isolate}
+#england.sec.dark::before{z-index:0;background-image:radial-gradient(ellipse at center,rgba(18,34,68,.74),rgba(16,30,62,.46) 75%)}
+#england .england-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+#england .england-bg-video{position:sticky;top:0;display:block;width:100%;height:100vh;height:100svh;object-fit:cover}
+#england>.wrap{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){#england .england-bg-video{display:none}#england.sec.dark::before{background-image:none}}
+#england .scot-steps li b,#england li>b{color:#f1c97a}
