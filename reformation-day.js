@@ -44,7 +44,7 @@
     build();document.documentElement.classList.add('refday');document.body.classList.add('refday');
     var k=document.querySelector('#top .kicker');if(k&&origKicker===null){origKicker=k.innerHTML;k.textContent='Happy Reformation Day · October 31, 1517'}
     var v=document.querySelector('#top .hero-theses-video');
-    if(v&&origVideo===null){origVideo=v.getAttribute('src');exists('./assets/refday-celebrate.mp4?v=1',function(ok){if(ok&&document.documentElement.classList.contains('refday')){v.src='./assets/refday-celebrate.mp4?v=1';v.muted=true;v.loop=true;v.play&&v.play().catch(function(){})}})}
+    if(v&&origVideo===null){origVideo=v.getAttribute('src');exists('./assets/refday-celebrate.mp4?v=2',function(ok){if(ok&&document.documentElement.classList.contains('refday')){v.src='./assets/refday-celebrate.mp4?v=2';v.muted=true;v.loop=true;v.play&&v.play().catch(function(){})}})}
     if(!fxTimer&&!matchMedia('(prefers-reduced-motion: reduce)').matches)fxTimer=setInterval(spawn,700);
   }
   function off(){
