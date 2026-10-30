@@ -1,6 +1,6 @@
 /* chapter progress rail + offscreen video pause */
 (function(){
-var ACTS=[["Europe",["top","reformation","england","scotland"]],["Doctrine",["solas","confessions","election"]],["Atlantic",["puritans","awakening"]],["Explore",["era","map","people","hymns","shelf"]],["Learn",["path"]]];
+var ACTS=[["Europe",["top","reformation","england","scotland"]],["Doctrine",["solas","confessions","election"]],["Atlantic",["puritans","awakening","second-awakening"]],["Explore",["era","map","people","hymns","shelf"]],["Learn",["path"]]];
 var actOf={};ACTS.forEach(function(a,i){a[1].forEach(function(id){actOf[id]=i})});
 var nav=document.getElementById("site-nav");
 if(nav)[].forEach.call(nav.querySelectorAll("a[href^='#']"),function(a){var i=actOf[a.getAttribute("href").slice(1)];if(i!=null)a.title="Act "+(i+1)+" · "+ACTS[i][0]});
