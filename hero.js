@@ -17,3 +17,6 @@
   for(i=0;i<no;i++)h+=st('orb',(i%3?(8+R()*30):(40+R()*110)).toFixed(0),(10+R()*12).toFixed(1))+';--x:'+((R()-.5)*160).toFixed(0)+'px;--y:'+(-40-R()*120).toFixed(0)+'px"></i>';
   w.innerHTML=h;fx.appendChild(w);
 })();
+
+// Pause hero video for reduced-motion users
+(function(){var v=document.querySelector('.hero-theses-video');if(v&&window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}})();
