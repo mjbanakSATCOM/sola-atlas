@@ -521,7 +521,8 @@ html,body{overflow-x:clip}
 
 #reformation{--bg:none}
 #reformation.ref-hero{isolation:isolate}
-#reformation .ref-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;pointer-events:none}
+#reformation .ref-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+#reformation .ref-bg-video{position:sticky;top:0;display:block;width:100%;height:100vh;height:100svh;object-fit:cover}
 #reformation.ref-hero::before{z-index:0;filter:none;background-image:linear-gradient(90deg,rgba(20,32,28,.25) 0%,rgba(20,32,28,.45) 18%,rgba(20,32,28,.86) 32%,rgba(20,32,28,.9) 50%,rgba(20,32,28,.86) 68%,rgba(20,32,28,.45) 82%,rgba(20,32,28,.25) 100%)}
 @media (max-width:720px){#reformation.ref-hero::before{background-image:linear-gradient(rgba(20,32,28,.82),rgba(20,32,28,.9))}}
 @media (prefers-reduced-motion:reduce){#reformation .ref-bg-video{display:none}#reformation{--bg:url(assets/bg/bg-reformation-day.jpg)}#reformation.ref-hero::before{background-image:linear-gradient(rgba(20,32,28,.90),rgba(20,32,28,.95)),var(--bg)}}
