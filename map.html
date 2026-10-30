@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Timeline &amp; map — Reformed Atlas</title>
+<meta name="description" content="Where the Reformation and the Puritan story happened, from Wittenberg to New England, with an interactive timeline.">
+<meta property="og:title" content="Timeline &amp; map — Reformed Atlas">
+<meta property="og:description" content="Where the Reformation and the Puritan story happened, from Wittenberg to New England, with an interactive timeline.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://reformedatlas.com/map.html">
+<meta property="og:image" content="https://reformedatlas.com/assets/hero-wittenberg.jpg">
+<meta property="og:site_name" content="Reformed Atlas">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Timeline &amp; map — Reformed Atlas">
+<meta name="twitter:description" content="Where the Reformation and the Puritan story happened, from Wittenberg to New England, with an interactive timeline.">
+<meta name="twitter:image" content="https://reformedatlas.com/assets/hero-wittenberg.jpg">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,500;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:wght@600&family=Libre+Baskerville:wght@700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css?v=42">
+<link rel="stylesheet" href="./museum.css?v=3">
+<link rel="stylesheet" href="./hero-stars.css?v=20261029m">
+<link rel="canonical" href="https://reformedatlas.com/map.html">
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="./"><span class="seal" aria-hidden="true">R</span>Reformed Atlas</a>
+  <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span></button>
+  <nav class="nav" id="site-nav" aria-label="Sections">
+    <a href="./#reformation">Reformation</a><a href="./#solas">Solas</a><a href="./#confessions">Confessions</a><a href="./#election">Election</a><a href="./#england">England</a><a href="./#scotland">Scotland</a><a href="./#era">Timeline</a><a href="./#map">Map</a><a href="./#people">People</a><a href="./#hymns">Hymns</a><a href="./#shelf">Books</a><a href="./#puritans">Puritans</a><a href="./#awakening">Awakening</a><a href="./#second-awakening">2nd Awakening</a><a href="./#path">Learn</a>
+    <span class="nav-pages"><a href="./people.html">People</a><a href="./books.html">Books</a><a href="./map.html">Map</a></span>
+  </nav>
+</header>
+
+<main id="main">
+<section class="sec" id="era">
+  <div class="wrap">
+    <header class="head"><p class="kicker">VII · History</p><h2>Interactive timeline</h2><p>Drag the scrubber, use the arrow keys, or select a year. Each event lights up its place on the map below.</p></header>
+    <div class="scrub">
+      <input type="range" id="tl-range" min="0" max="15" value="2" aria-label="Timeline event">
+      <div class="ticks" id="tl-ticks"></div>
+    </div>
+    <article class="tl-card" id="tl-card" aria-live="polite"></article>
+  </div>
+</section>
+
+<section class="sec alt" id="map">
+  <div class="wrap">
+    <header class="head"><p class="kicker">VIII · Geography</p><h2>Where it happened</h2><p>Select a city to see what happened there. The New England inset shows where the Puritan story crossed the Atlantic.</p></header>
+    <div class="map-layout">
+      <div class="map-box"><svg id="map-svg" viewBox="0 0 800 520" role="img" aria-label="Map of Reformation and Puritan cities"></svg></div>
+      <aside class="map-info" id="map-info" aria-live="polite"><p class="small">Select a city on the map.</p></aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p><b>Reformed Atlas</b> · Soli Deo Gloria</p><p class="small"><a href="./">← Back to the full atlas</a> · <a href="./#map">See it in the full atlas</a> · Pages: <a href="./people.html">People</a> · <a href="./books.html">Books</a> · <a href="./map.html">Map</a></p><p class="small">Facts are linked to public sources throughout. Image credits: <a href="https://github.com/mjbanakSATCOM/sola-atlas/blob/main/assets/CREDITS.md" target="_blank" rel="noopener">CREDITS</a>.</p></div>
+</footer>
+<script src="./data.js?v=2" defer></script>
+<script src="./map-data.js?v=4" defer></script>
+<script src="./app.js?v=12" defer></script>
+<script src="./museum.js?v=3" defer></script>
+<!-- generated by tools/build-pages.py from index.html; edit index.html then rerun -->
+</body>
+</html>

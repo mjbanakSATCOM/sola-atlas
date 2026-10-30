@@ -594,3 +594,7 @@ html,body{overflow-x:clip}
 @keyframes atl-flow{from{stroke-dashoffset:918}to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.atl-flow{display:none}}
 .hymn-audio{margin:.6rem 0}.hymn-audio audio{width:100%;height:34px}.hymn-audio small{display:block;opacity:.7;font-size:.75rem}
+/* standalone pages */
+.subpage main>.sec:first-child{padding-top:calc(var(--topbar-h,64px) + 2rem)}
+.nav-pages{display:contents}
+.nav-pages a{font-style:italic}
