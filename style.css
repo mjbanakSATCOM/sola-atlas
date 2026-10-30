@@ -507,3 +507,7 @@ html,body{overflow-x:clip}
 
 .fly-book3d .fb-cover{display:flex;align-items:center;justify-content:center;text-align:center;padding:8%}
 .fly-book3d .fb-title{font:600 11px/1.2 Georgia,serif;color:#e8c766;text-shadow:0 1px 0 rgba(0,0,0,.6)}
+/* tulips resting on top of bookcase frame */
+.shelves{margin-top:96px}
+.shelf-tulips{bottom:calc(100% + 16px)!important;z-index:6}
+@media (max-width:640px){.shelves{margin-top:64px}}
