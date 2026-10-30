@@ -146,14 +146,14 @@ document.addEventListener('click',e=>{if(n.classList.contains('open')&&!n.contai
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&n.classList.contains('open')){set(false);b.focus();}});
 var _wm=window.matchMedia&&matchMedia('(min-width:981px)');_wm&&_wm.addEventListener&&_wm.addEventListener('change',m=>{if(m.matches)set(false);});})();
 (function(){var styles=[
- {ff:'var(--f-display)',fw:600,fi:'normal',ls:'.01em',tt:'none'},
- {ff:'var(--f-body)',fw:400,fi:'italic',ls:'0',tt:'none'},
- {ff:'var(--f-display)',fw:800,fi:'normal',ls:'.06em',tt:'uppercase'},
- {ff:'var(--f-body)',fw:700,fi:'normal',ls:'.02em',tt:'none'},
- {ff:'var(--f-display)',fw:400,fi:'italic',ls:'0',tt:'none'},
- {ff:'var(--f-mono)',fw:500,fi:'normal',ls:'.04em',tt:'uppercase'},
- {ff:'var(--f-body)',fw:600,fi:'italic',ls:'.01em',tt:'none'},
- {ff:'var(--f-display)',fw:600,fi:'normal',ls:'.12em',tt:'uppercase'}];
+ {ff:"'Playfair Display',var(--f-display)",fw:600,fi:'normal',ls:'.01em',tt:'none'},
+ {ff:"'EB Garamond',var(--f-body)",fw:500,fi:'italic',ls:'0',tt:'none'},
+ {ff:"'Cinzel',var(--f-display)",fw:700,fi:'normal',ls:'.06em',tt:'uppercase'},
+ {ff:"'Libre Baskerville',var(--f-body)",fw:700,fi:'normal',ls:'.01em',tt:'none'},
+ {ff:"'Cormorant Garamond',var(--f-display)",fw:600,fi:'italic',ls:'0',tt:'none'},
+ {ff:"'Cinzel',var(--f-display)",fw:600,fi:'normal',ls:'.08em',tt:'uppercase'},
+ {ff:'var(--f-display)',fw:600,fi:'italic',ls:'.01em',tt:'none'},
+ {ff:"'Cormorant Garamond',var(--f-display)",fw:700,fi:'normal',ls:'.1em',tt:'uppercase'}];
 function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
 function fit(){document.querySelectorAll('#bookshelf .spine').forEach(function(sp){var st=sp.querySelector('.st');if(!st||sp.hidden)return;
  if(!st.dataset.v){var n=st.textContent.length,v=styles[hash(st.textContent)%styles.length];if(n>26&&(v.tt==='uppercase'||v.ls!=='0'))v=[styles[1],styles[4],styles[6],styles[0]][hash(st.textContent)%4];st.style.setProperty('--ff',v.ff);st.style.setProperty('--fw',v.fw);st.style.setProperty('--fi',v.fi);st.style.setProperty('--ls',v.ls);st.style.setProperty('--tt',v.tt);st.dataset.v=1;sp.style.flexGrow=n>40?1.7:n>30?1.35:n>22?1.1:.85}
