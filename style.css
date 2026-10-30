@@ -454,7 +454,12 @@ html,body{overflow-x:clip}
 #hymns .head h2{color:#f4ecd8}#hymns .head>p{color:#c9c2b0}
 #hymns .hymn-card{color:var(--ink,#1f1b16)}#hymns .hymn-card a.hymn-src{color:var(--oxblood)}
 
-.vid-pairs{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}.vid-pair{display:flex;align-items:center;gap:.6rem}.vid-thumb img{display:block;width:140px;aspect-ratio:16/9;object-fit:cover;border-radius:8px}@media(max-width:600px){.vid-pairs{flex-direction:column;align-items:center}}
+.vid-pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:52rem;margin:0 auto;align-items:stretch}
+.vid-pair{display:flex;flex-direction:column;align-items:center;gap:.75rem;text-align:center}
+.vid-thumb{display:block;width:100%;max-width:280px}
+.vid-thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:1px solid rgba(241,201,122,.35)}
+.vid-pair .btn{width:100%;max-width:280px;box-sizing:border-box;margin:0;justify-content:center;text-align:center;white-space:normal;line-height:1.25;min-height:3rem;display:inline-flex;align-items:center}
+@media(max-width:600px){.vid-pairs{grid-template-columns:1fr}}
 /* shelf II taller, no short books */
 /* all shelves: books nearly fill each row (small headroom) */
 .shelves .shelf{min-height:330px;padding-top:12px}
