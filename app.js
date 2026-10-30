@@ -81,11 +81,12 @@ filterChips("#ppl-chips",function(f){$$(".person",pg).forEach(function(p){p.hidd
 function filterChips(sel,fn){var w=$(sel);$$(".chip",w).forEach(function(b){b.setAttribute("aria-pressed",b.classList.contains("on"));b.addEventListener("click",function(){$$(".chip",w).forEach(function(x){x.classList.remove("on");x.setAttribute("aria-pressed","false")});b.classList.add("on");b.setAttribute("aria-pressed","true");fn(b.dataset.f)})});}
 
 /* shelf */
+function sparkle(s){$$(".spk",s).forEach(function(x){x.remove()});for(var i=0;i<14;i++){var p=document.createElement("i");p.className="spk"+(i%4===0?" r":"");p.style.left=(10+Math.random()*80)+"%";p.style.top=(5+Math.random()*90)+"%";p.style.setProperty("--dx",(Math.random()*30-15)+"px");p.style.setProperty("--dy",(Math.random()*30-15)+"px");p.style.animationDelay=(i*55)+"ms";s.appendChild(p)}setTimeout(function(){$$(".spk",s).forEach(function(x){x.remove()})},2200)}
 var shelf=$("#bookshelf"),bc=$("#book-card"),spines=[];
 S.books.forEach(function(b,i){var s=el("button",{class:"spine",role:"listitem","data-cat":b.cat,style:"--c:"+b.c+";--h:"+b.h+"px","aria-label":b.t+" by "+b.a},'<span class="st">'+b.t+'</span><span class="sa">'+b.a.split(" ").slice(-1)[0]+'</span>');
   s.addEventListener("click",function(){$$(".spine",shelf).forEach(function(x){x.classList.toggle("out",x===s)});
     bc.innerHTML='<div class="cover" style="--c:'+b.c+'"><span>'+b.t+'</span><small>'+b.a+'</small></div><div><p class="kicker">'+b.cat+' · '+b.y+'</p><h3>'+b.t+'</h3><p class="by">'+b.a+'</p><p>'+b.about+'</p><p class="d2"><b>Where to start:</b> '+b.start+'</p>'+src(b.src,"Read / learn more")+'</div>';
-    bc.classList.remove("pop");void bc.offsetWidth;bc.classList.add("pop");});spines.push(s);});
+    bc.classList.remove("pop");void bc.offsetWidth;bc.classList.add("pop");sparkle(s);});spines.push(s);});
 var shelfLbl={all:"Shelf",theology:"Theology",commentary:"Commentaries",puritan:"Puritan classics",devotional:"Devotional",biography:"Biography"};
 function layShelves(f){window._shelfF=f;shelf.innerHTML="";var row;spines.filter(function(s){s.hidden=!(f==="all"||s.dataset.cat===f);return !s.hidden}).forEach(function(s,i){if(i%((window.matchMedia&&matchMedia("(max-width:480px)").matches)?8:16)===0){row=el("div",{class:"shelf",role:"list"});shelf.appendChild(row)}s.hidden=false;row.appendChild(s)});$$(".shelf",shelf).forEach(function(r,k){r.appendChild(el("span",{class:"shelf-plate","aria-hidden":"true"},(shelfLbl[f]||"Shelf")+" · "+["I","II","III","IV","V","VI","VII","VIII"][k]));$$(".spine",r).forEach(function(sp,j){sp.style.transitionDelay="0s,0s,0s,0s,"+(j*45+k*120)+"ms,"+(j*45+k*120)+"ms"})});if(window._sd)shelf.appendChild(window._sd);}
 layShelves("all");
