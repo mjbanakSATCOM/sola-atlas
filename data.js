@@ -101,9 +101,9 @@ window.SOLA = {
   ],
   places: {
     oxford:{img:"./assets/places/oxford.jpg",lab:[-10,16,"end"],n:"Oxford",lon:-1.26,lat:51.75,note:"Wycliffe taught here; Latimer and Ridley (1555) and Cranmer (1556) were burned here."},
-    london:{img:"./assets/places/london.jpg",lab:[10,16,"start"],n:"London",lon:-0.13,lat:51.51,note:"Reformation Parliament (1529–36) ended papal authority; Westminster Assembly (1643–53); centre of Puritan preaching and printing."},
+    london:{img:"./assets/places/london.jpg",lab:[-6,-8,"end"],n:"London",lon:-0.13,lat:51.51,note:"Reformation Parliament (1529–36) ended papal authority; Westminster Assembly (1643–53); centre of Puritan preaching and printing."},
     cambridge:{img:"./assets/places/cambridge.jpg",lab:[10,-8,"start"],n:"Cambridge",lon:0.12,lat:52.2,note:"'Little Germany' reformers (Bilney, Latimer, Frith) met here in the 1520s; later William Perkins taught here."},
-    canterbury:{lab:[10,10,"start"],n:"Canterbury",lon:1.08,lat:51.28,note:"Seat of Archbishop Cranmer; Becket's shrine destroyed in the Henrician Reformation."},
+    canterbury:{lab:[-6,22,"end"],n:"Canterbury",lon:1.08,lat:51.28,note:"Seat of Archbishop Cranmer; Becket's shrine destroyed in the Henrician Reformation."},
     vilvoorde:{lab:[10,10,"start"],n:"Vilvoorde",lon:4.43,lat:50.93,note:"William Tyndale executed here, 1536."},
     bedford:{img:"./assets/places/bedford.jpg",lab:[-10,-8,"end"],n:"Bedford",lon:-0.47,lat:52.14,note:"John Bunyan's home and place of imprisonment."},
     edinburgh:{img:"./assets/places/edinburgh.jpg",n:"Edinburgh",lon:-3.19,lat:55.95,note:"John Knox preached at St Giles'; Scots Confession 1560."},
