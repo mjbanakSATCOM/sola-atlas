@@ -21,7 +21,7 @@
   <a class="brand" href="#top"><span class="seal" aria-hidden="true">R</span>Reformed Atlas</a>
   <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span></button>
   <nav class="nav" id="site-nav" aria-label="Sections">
-    <a href="#reformation">Reformation</a><a href="#solas">Solas</a><a href="#confessions">Confessions</a><a href="#election">Election</a><a href="#era">Timeline</a><a href="#map">Map</a><a href="#people">People</a><a href="#puritans">Puritans</a><a href="#england">England</a><a href="#scotland">Scotland</a><a href="#hymns">Hymns</a><a href="#shelf">Books</a><a href="#path">Learn</a>
+    <a href="#reformation">Reformation</a><a href="#solas">Solas</a><a href="#confessions">Confessions</a><a href="#election">Election</a><a href="#england">England</a><a href="#scotland">Scotland</a><a href="#era">Timeline</a><a href="#map">Map</a><a href="#people">People</a><a href="#hymns">Hymns</a><a href="#shelf">Books</a><a href="#puritans">Puritans</a><a href="#path">Learn</a>
   </nav>
 </header>
 
@@ -166,62 +166,9 @@
   </section>
 
 
-<section class="sec" id="era">
-  <div class="wrap">
-    <header class="head"><p class="kicker">V · History</p><h2>Interactive timeline</h2><p>Drag the scrubber, use the arrow keys, or select a year. Each event lights up its place on the map below.</p></header>
-    <div class="scrub">
-      <input type="range" id="tl-range" min="0" max="15" value="2" aria-label="Timeline event">
-      <div class="ticks" id="tl-ticks"></div>
-    </div>
-    <article class="tl-card" id="tl-card" aria-live="polite"></article>
-  </div>
-</section>
-
-<section class="sec alt" id="map">
-  <div class="wrap">
-    <header class="head"><p class="kicker">VI · Geography</p><h2>Where it happened</h2><p>Select a city to see what happened there. The New England inset shows where the Puritan story crossed the Atlantic.</p></header>
-    <div class="map-layout">
-      <div class="map-box"><svg id="map-svg" viewBox="0 0 800 520" role="img" aria-label="Map of Reformation and Puritan cities"></svg></div>
-      <aside class="map-info" id="map-info" aria-live="polite"><p class="small">Select a city on the map.</p></aside>
-    </div>
-  </div>
-</section>
-
-<section class="sec dark ink" id="people">
-  <div class="wrap">
-    <header class="head"><p class="kicker">VII · People</p><h2>Reformers &amp; Puritans</h2><p>Select a portrait to turn the card. Filter by era.</p>
-    <div class="chips" id="ppl-chips" role="group" aria-label="Filter people"><button class="chip on" data-f="all">All</button><button class="chip" data-f="fore">Forerunners</button><button class="chip" data-f="ref">Reformers</button><button class="chip" data-f="pur">Puritans &amp; heirs</button></div></header>
-    <div class="people" id="people-grid"></div>
-    <p class="small">Portraits: Wikimedia Commons, public domain.</p>
-  </div>
-</section>
-
-<section class="sec dark" id="puritans">
-  <div class="wrap">
-    <header class="head"><p class="kicker">VIII · The Puritans</p><h2>Reforming England, then a new world</h2></header>
-    <div class="pur-grid">
-      <div><p>The Puritans were English Protestants of the late 16th and 17th centuries who believed the Church of England's reformation under Elizabeth I had stopped halfway. They wanted worship, church government and everyday life shaped more closely by Scripture.<a class="src" href="https://en.wikipedia.org/wiki/Puritans" target="_blank" rel="noopener">Wikipedia</a></p>
-      <p class="d2">Their theology was Reformed; their great strength was “practical divinity” — preaching and writing that applied doctrine to conscience, family, work and prayer. Some stayed in the national church, some separated, and many sailed for New England in the 1630s.</p></div>
-      <ol class="steps">
-        <li><b>1559</b> Elizabethan Settlement leaves many reformers dissatisfied.</li>
-        <li><b>1630s</b> Great Migration to Massachusetts Bay.</li>
-        <li><b>1643–53</b> Westminster Assembly.</li>
-        <li><b>1662</b> Great Ejection of about 2,000 ministers.</li>
-        <li class="d2"><b>1689</b> Act of Toleration gives Dissenters freedom of worship.</li>
-      </ol>
-    </div>
-    <div class="marks">
-      <div><h4>Sabbath &amp; Word</h4><p>Plain, expository preaching and the Lord's Day kept for worship.</p></div>
-      <div><h4>Family religion</h4><p>Household worship and catechising, as Baxter urged in <i>The Reformed Pastor</i>.</p></div>
-      <div><h4>Conscience</h4><p>Close self-examination and pastoral “cases of conscience,” pioneered by Perkins.</p></div>
-      <div><h4>Covenant</h4><p>Covenant theology framed God's dealings with his people and their churches.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="sec alt" id="england">
   <div class="wrap">
-    <header class="head"><p class="kicker">IX · England</p><h2>The English Reformation</h2><p>How England broke with Rome under Henry VIII, became Protestant under Edward VI, suffered under Mary I and was settled under Elizabeth I, with the people, places and dates behind it.</p></header>
+    <header class="head"><p class="kicker">V · England</p><h2>The English Reformation</h2><p>How England broke with Rome under Henry VIII, became Protestant under Edward VI, suffered under Mary I and was settled under Elizabeth I, with the people, places and dates behind it.</p></header>
     <div class="scot-grid">
       <div>
         <p>The English Reformation began in the 16th century when the Church of England broke away from the authority of the pope and then from some doctrines and practices of the Catholic Church. By 1520 Luther's ideas were known and debated in England, and William Tyndale's English New Testament of 1526, printed abroad and smuggled in, helped spread Protestant ideas.<a class="src" href="https://en.wikipedia.org/wiki/English_Reformation" target="_blank" rel="noopener">Wikipedia</a></p>
@@ -266,7 +213,7 @@
 
 <section class="sec dark ink" id="scotland">
   <div class="wrap">
-    <header class="head"><p class="kicker">X · Scotland</p><h2>The Scottish Reformation</h2><p>How Scotland broke with Rome in 1560 and built a Presbyterian, Reformed kirk, with the people, places and dates behind it.</p></header>
+    <header class="head"><p class="kicker">VI · Scotland</p><h2>The Scottish Reformation</h2><p>How Scotland broke with Rome in 1560 and built a Presbyterian, Reformed kirk, with the people, places and dates behind it.</p></header>
     <div class="scot-grid">
       <div>
         <p>Scottish scholars and churchmen were reading Luther's ideas by the first half of the 16th century. In 1560 a group of Protestant nobles, the Lords of the Congregation, took control of government, and the Reformation Parliament approved a Protestant confession of faith and rejected the pope's authority. James VI's government formally ratified these acts in 1567.<a class="src" href="https://en.wikipedia.org/wiki/Scottish_Reformation" target="_blank" rel="noopener">Wikipedia</a></p>
@@ -310,9 +257,39 @@
   </div>
 </section>
 
+<section class="sec" id="era">
+  <div class="wrap">
+    <header class="head"><p class="kicker">VII · History</p><h2>Interactive timeline</h2><p>Drag the scrubber, use the arrow keys, or select a year. Each event lights up its place on the map below.</p></header>
+    <div class="scrub">
+      <input type="range" id="tl-range" min="0" max="15" value="2" aria-label="Timeline event">
+      <div class="ticks" id="tl-ticks"></div>
+    </div>
+    <article class="tl-card" id="tl-card" aria-live="polite"></article>
+  </div>
+</section>
+
+<section class="sec alt" id="map">
+  <div class="wrap">
+    <header class="head"><p class="kicker">VIII · Geography</p><h2>Where it happened</h2><p>Select a city to see what happened there. The New England inset shows where the Puritan story crossed the Atlantic.</p></header>
+    <div class="map-layout">
+      <div class="map-box"><svg id="map-svg" viewBox="0 0 800 520" role="img" aria-label="Map of Reformation and Puritan cities"></svg></div>
+      <aside class="map-info" id="map-info" aria-live="polite"><p class="small">Select a city on the map.</p></aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark ink" id="people">
+  <div class="wrap">
+    <header class="head"><p class="kicker">IX · People</p><h2>Reformers &amp; Puritans</h2><p>Select a portrait to turn the card. Filter by era.</p>
+    <div class="chips" id="ppl-chips" role="group" aria-label="Filter people"><button class="chip on" data-f="all">All</button><button class="chip" data-f="fore">Forerunners</button><button class="chip" data-f="ref">Reformers</button><button class="chip" data-f="pur">Puritans &amp; heirs</button></div></header>
+    <div class="people" id="people-grid"></div>
+    <p class="small">Portraits: Wikimedia Commons, public domain.</p>
+  </div>
+</section>
+
 <section class="sec dark" id="hymns">
   <div class="wrap">
-    <header class="head"><p class="kicker">XI · Hymns</p><h2>Hymns of the Reformation</h2><p>Songs the Reformers wrote, sang, or commended to their churches, with a short history of each.</p></header>
+    <header class="head"><p class="kicker">X · Hymns</p><h2>Hymns of the Reformation</h2><p>Songs the Reformers wrote, sang, or commended to their churches, with a short history of each.</p></header>
     <div class="hymn-grid" role="list">
       <article class="hymn-card" role="listitem"><p class="hymn-tag hymn-wrote">Wrote</p><h3>Ein feste Burg ist unser Gott</h3><p class="hymn-en">A Mighty Fortress Is Our God</p><p class="hymn-by">Martin Luther</p><p>Luther wrote both the words and the tune between 1527 and 1529. The opening line paraphrases Psalm 46; the rest is largely his own. It has been translated into English at least seventy times; it is one of Luther's best-known hymns.</p><a class="hymn-src" href="https://en.wikipedia.org/wiki/A_Mighty_Fortress_Is_Our_God" target="_blank" rel="noopener">Source ↗</a></article>
       <article class="hymn-card" role="listitem"><p class="hymn-tag hymn-wrote">Wrote</p><h3>Aus tiefer Not schrei ich zu dir</h3><p class="hymn-en">Out of the depths I cry to Thee</p><p class="hymn-by">Martin Luther</p><p>Luther's paraphrase of Psalm 130, a psalm of repentance and grace. It came out in 1524 as one of the eight songs in the first Lutheran hymnal, the <i>Achtliederbuch</i>, and appeared in the Erfurt Enchiridion the same year.</p><a class="hymn-src" href="https://en.wikipedia.org/wiki/Aus_tiefer_Not_schrei_ich_zu_dir" target="_blank" rel="noopener">Source ↗</a></article>
@@ -332,10 +309,33 @@
 
 <section class="sec dark ink" id="shelf">
   <div class="wrap">
-    <header class="head"><p class="kicker">XII · Books</p><h2>The Reformed bookshelf</h2><p>Pull a volume off the shelf to read about it and where to start. Filter by kind.</p>
+    <header class="head"><p class="kicker">XI · Books</p><h2>The Reformed bookshelf</h2><p>Pull a volume off the shelf to read about it and where to start. Filter by kind.</p>
     <div class="chips" id="shelf-chips" role="group" aria-label="Filter books"><button class="chip on" data-f="all">All</button><button class="chip" data-f="theology">Theology</button><button class="chip" data-f="commentary">Commentaries</button><button class="chip" data-f="puritan">Puritan classics</button><button class="chip" data-f="devotional">Devotional</button><button class="chip" data-f="biography">Biography</button></div></header>
     <div class="shelves" id="bookshelf"></div>
     <article class="book-card" id="book-card" aria-live="polite"><p class="small">Select a spine.</p></article>
+  </div>
+</section>
+
+<section class="sec dark" id="puritans">
+  <div class="wrap">
+    <header class="head"><p class="kicker">XII · The Puritans</p><h2>Reforming England, then a new world</h2></header>
+    <div class="pur-grid">
+      <div><p>The Puritans were English Protestants of the late 16th and 17th centuries who believed the Church of England's reformation under Elizabeth I had stopped halfway. They wanted worship, church government and everyday life shaped more closely by Scripture.<a class="src" href="https://en.wikipedia.org/wiki/Puritans" target="_blank" rel="noopener">Wikipedia</a></p>
+      <p class="d2">Their theology was Reformed; their great strength was “practical divinity” — preaching and writing that applied doctrine to conscience, family, work and prayer. Some stayed in the national church, some separated, and many sailed for New England in the 1630s.</p></div>
+      <ol class="steps">
+        <li><b>1559</b> Elizabethan Settlement leaves many reformers dissatisfied.</li>
+        <li><b>1630s</b> Great Migration to Massachusetts Bay.</li>
+        <li><b>1643–53</b> Westminster Assembly.</li>
+        <li><b>1662</b> Great Ejection of about 2,000 ministers.</li>
+        <li class="d2"><b>1689</b> Act of Toleration gives Dissenters freedom of worship.</li>
+      </ol>
+    </div>
+    <div class="marks">
+      <div><h4>Sabbath &amp; Word</h4><p>Plain, expository preaching and the Lord's Day kept for worship.</p></div>
+      <div><h4>Family religion</h4><p>Household worship and catechising, as Baxter urged in <i>The Reformed Pastor</i>.</p></div>
+      <div><h4>Conscience</h4><p>Close self-examination and pastoral “cases of conscience,” pioneered by Perkins.</p></div>
+      <div><h4>Covenant</h4><p>Covenant theology framed God's dealings with his people and their churches.</p></div>
+    </div>
   </div>
 </section>
 
