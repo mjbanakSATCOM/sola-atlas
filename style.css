@@ -515,7 +515,7 @@ html,body{overflow-x:clip}
 .ref-hero .head .ref-motto-en{font:italic clamp(1.1rem,2.5vw,1.6rem)/1.3 var(--f-display);color:var(--brass);letter-spacing:.06em;margin:-.2em 0 1rem}
 #shelf{--bg:none}
 #shelf.sec.dark.ink::before{z-index:0;background-image:linear-gradient(rgba(20,32,28,.72),rgba(10,16,14,.84))}
-#shelf .shelf-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;pointer-events:none}
+#shelf .shelf-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;z-index:-1;pointer-events:none}
 #shelf>.wrap{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){#shelf .shelf-bg-video{display:none}#shelf{--bg:url(assets/bg/bg-shelf.jpg)}#shelf.sec.dark.ink::before{background-image:linear-gradient(rgba(20,32,28,.88),rgba(10,16,14,.94)),var(--bg)}}
 
@@ -536,3 +536,12 @@ html,body{overflow-x:clip}
 #england>.wrap{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){#england .england-bg-video{display:none}#england.sec.dark::before{background-image:none}}
 #england .scot-steps li b,#england li>b{color:#f1c97a}
+#england .sola-panel,#england .layer,#england .book-card,#england .hymn-card,#england .scot-places>div,#england .layer p,#england .layer li,#england .flip,#england .front{color:var(--ink)}
+#england .sola-tabs button[aria-selected="true"]{background:var(--brass,#b8893a);color:var(--ink);border-color:var(--brass,#b8893a)}
+#england .chips button{color:#eae3d1;border-color:rgba(241,201,122,.45)}
+#england .chips button.on{background:#f1c97a;color:var(--ink);border-color:#f1c97a}
+#england .small{color:#c9c2b0}
+#england :is(.sola-panel,.layer,.book-card,.hymn-card,.scot-places>div,.back,[class*="card"],[class*="dl"]) a{color:#8a5a12}
+#england :is(.layer,.hymn-card,.scot-places>div,[class*="card"]) :is(.small,p.small,.muted){color:#5a5446}
+#england .scot-h{color:#f1c97a}
+#england .back a{color:#f1c97a}
