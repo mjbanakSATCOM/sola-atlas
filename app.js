@@ -167,7 +167,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeou
 document.querySelectorAll('#shelf-chips button,#shelf-chips [data-f]').forEach(function(b){b.addEventListener('click',function(){setTimeout(fit,30)})});})();
 
 function flyBook(s,b){var bc=document.getElementById("book-card");if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;var cv=bc.querySelector(".cover");if(!cv||!s.animate)return;var a=s.getBoundingClientRect(),t=cv.getBoundingClientRect();
-var W=a.width,H=a.height,D=Math.round(H*.68);var BF="backface-visibility:hidden;-webkit-backface-visibility:hidden;";
+var W=a.width,H=a.height,D=Math.round(H*Math.min(Math.max(t.width/t.height,.78),1));var BF="backface-visibility:hidden;-webkit-backface-visibility:hidden;";
 var f=document.createElement("div");f.className="fly-book3d";f.setAttribute("aria-hidden","true");f.style.cssText="position:fixed;left:"+a.left+"px;top:"+a.top+"px;width:"+W+"px;height:"+H+"px;margin:0;z-index:999;pointer-events:none;perspective:1100px;-webkit-perspective:1100px;transform-origin:center";
 var g=document.createElement("div");g.style.cssText="position:absolute;inset:0;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transform-origin:50% 50% "+(-D/2)+"px";f.appendChild(g);
 /* box: front = spine (W x H) at z=0, back = page edge at z=-D, covers W..D wide on left/right */
