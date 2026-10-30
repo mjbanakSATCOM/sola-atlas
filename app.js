@@ -72,7 +72,7 @@ info.addEventListener("click",function(e){var b=e.target.closest("[data-tl]");if
 showTL(2);highlight("wittenberg",true);
 
 /* people */
-var era={wycliffe:"fore",hus:"fore",luther:"ref",zwingli:"ref",tyndale:"ref",calvin:"ref",knox:"ref",perkins:"pur",owen:"pur",bunyan:"pur",henry:"pur",edwards:"pur"};
+var era={wycliffe:"fore",hus:"fore",luther:"ref",zwingli:"ref",tyndale:"ref",calvin:"ref",knox:"ref",perkins:"pur",owen:"pur",bunyan:"pur",henry:"pur",edwards:"pur",tennent:"pur",whitefield:"pur"};
 var pg=$("#people-grid");
 S.people.forEach(function(p){var c=el("div",{class:"person","data-era":era[p.id]});
   c.innerHTML='<button class="flip" aria-pressed="false" aria-label="'+p.n+', show biography"><span class="face front"><img src="./assets/people/'+p.id+'.jpg" alt="Portrait of '+p.n+'" loading="lazy"><span class="cap"><b>'+p.n+'</b><small>'+p.d+'</small></span></span><span class="face back"><small class="kicker">'+p.role+'</small><b>'+p.n+'</b><small>'+p.d+'</small><span class="bio">'+p.bio+'</span></span></button><a class="src" href="'+p.src+'" target="_blank" rel="noopener">Biography</a>';
@@ -102,7 +102,7 @@ var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){shelf.class
 /* paths */
 var PATHS=[
  {id:"new",t:"New to the Reformed faith",d:"About 20 minutes",steps:[["#solas","Read all five solas"],["#reformation-day","Reformation Day: why 1517 matters"],["#election","Election: 'In plain words'"],["#people","Meet Luther, Calvin and Bunyan"],["#shelf","Pick up The Pilgrim's Progress"]]},
- {id:"study",t:"Church class / student",d:"Two or three sittings",steps:[["#confessions","Compare the five confessions"],["#election","Election: what the confessions teach"],["#era","Walk the timeline from 1382 to 1741"],["#puritans","The Puritans"],["#shelf","Choose one theology and one commentary"]]},
+ {id:"study",t:"Church class / student",d:"Two or three sittings",steps:[["#confessions","Compare the five confessions"],["#election","Election: what the confessions teach"],["#era","Walk the timeline from 1382 to 1741"],["#puritans","The Puritans"],["#awakening","The Great Awakening in America"],["#shelf","Choose one theology and one commentary"]]},
  {id:"deep",t:"Deeper study",d:"Ongoing",steps:[["#election","Election: deeper study and key texts"],["#confessions","Read Dort Head 1 and Westminster ch. 3"],["#shelf","Owen's Death of Death and Turretin"],["#map","Trace the Geneva–Edinburgh–London links"],["#quiz","Score 8/8 on the quiz"]]}];
 var done={};try{done=JSON.parse(localStorage.getItem("sola-path")||"{}")}catch(e){}
 var pw=$("#paths");

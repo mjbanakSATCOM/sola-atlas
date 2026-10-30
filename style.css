@@ -559,3 +559,20 @@ html,body{overflow-x:clip}
 #path .path{color:var(--ink,#1f1b16)}
 #path .path a{color:#8a5a12}
 #path .head>p,#path .small{color:#c9c2b0}
+
+/* awakening: mirrors #england */
+#awakening{--bg:none;background:#14223d;position:relative;overflow:clip;isolation:isolate}
+#awakening.sec.dark::before{z-index:0;background-image:radial-gradient(ellipse at center,rgba(18,34,68,.74),rgba(16,30,62,.46) 75%)}
+#awakening .awakening-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+#awakening .awakening-bg-video{position:sticky;top:0;display:block;width:100%;height:100vh;height:100svh;object-fit:cover}
+#awakening>.wrap{position:relative;z-index:1}
+#awakening .scot-steps li b,#awakening li>b{color:#f1c97a}
+#awakening .sola-panel,#awakening .layer,#awakening .book-card,#awakening .hymn-card,#awakening .scot-places>div,#awakening .layer p,#awakening .layer li,#awakening .flip,#awakening .front{color:var(--ink)}
+#awakening .sola-tabs button[aria-selected="true"]{background:var(--brass,#b8893a);color:var(--ink);border-color:var(--brass,#b8893a)}
+#awakening .chips button{color:#eae3d1;border-color:rgba(241,201,122,.45)}
+#awakening .chips button.on{background:#f1c97a;color:var(--ink);border-color:#f1c97a}
+#awakening .small{color:#c9c2b0}
+#awakening :is(.sola-panel,.layer,.book-card,.hymn-card,.scot-places>div,.back,[class*="card"],[class*="dl"]) a{color:#8a5a12}
+#awakening :is(.layer,.hymn-card,.scot-places>div,[class*="card"]) :is(.small,p.small,.muted){color:#5a5446}
+#awakening .scot-h{color:#f1c97a}
+#awakening .back a{color:#f1c97a}

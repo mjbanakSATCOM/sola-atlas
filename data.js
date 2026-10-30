@@ -97,7 +97,10 @@ window.SOLA = {
     { y:1662, t:"The Great Ejection", d:"About 2,000 ministers who would not conform to the Act of Uniformity lose their posts in the Church of England.", place:"london", src:"https://en.wikipedia.org/wiki/Great_Ejection" },
     { y:1678, t:"The Pilgrim's Progress", d:"John Bunyan publishes his allegory, largely written while he was imprisoned in Bedford for unlicensed preaching.", place:"bedford", src:"https://en.wikipedia.org/wiki/The_Pilgrim%27s_Progress" },
     { y:1689, t:"Second London Baptist Confession", d:"Particular Baptists publicly endorse their confession after the Act of Toleration.", place:"london", src:"https://en.wikipedia.org/wiki/1689_Baptist_Confession_of_Faith" },
-    { y:1741, t:"Edwards and the Great Awakening", d:"Jonathan Edwards preaches 'Sinners in the Hands of an Angry God' at Enfield during the revival.", place:"northampton", src:"https://en.wikipedia.org/wiki/Jonathan_Edwards" }
+    { y:1740, t:"Whitefield in New England", d:"George Whitefield tours New England, preaching outdoors in Boston to thousands and at Northampton at Edwards's invitation.", place:"boston", src:"https://en.wikipedia.org/wiki/First_Great_Awakening" },
+    { y:1741, t:"Edwards and the Great Awakening", d:"Jonathan Edwards preaches 'Sinners in the Hands of an Angry God' at Enfield, Connecticut, on 8 July 1741, during the revival.", place:"enfield", src:"https://en.wikipedia.org/wiki/Jonathan_Edwards" },
+    { id:"tennent", n:"Gilbert Tennent", d:"1703–1764", role:"Presbyterian revivalist", bio:"Scotch-Irish Presbyterian and a leader of the Great Awakening. His sermon 'The Danger of an Unconverted Ministry' helped split the Old Side and New Side.", src:"https://en.wikipedia.org/wiki/Gilbert_Tennent" },
+    { id:"whitefield", n:"George Whitefield", d:"1714–1770", role:"Evangelist", bio:"Anglican open-air preacher whose American tours of 1739–40 spread the Great Awakening from Philadelphia to Boston.", src:"https://en.wikipedia.org/wiki/George_Whitefield" }
   ],
   places: {
     oxford:{img:"./assets/places/oxford.jpg",lab:[-10,16,"end"],n:"Oxford",lon:-1.26,lat:51.75,note:"Wycliffe taught here; Latimer and Ridley (1555) and Cranmer (1556) were burned here."},
@@ -117,7 +120,8 @@ window.SOLA = {
     geneva:{img:"./assets/places/geneva.jpg",n:"Geneva",lon:6.14,lat:46.2,note:"Calvin's city; the Genevan Academy (1559) trained pastors for all Europe."},
     prague:{img:"./assets/places/prague.jpg",n:"Prague",lon:14.42,lat:50.08,note:"Jan Hus preached at the Bethlehem Chapel."},
     boston:{img:"./assets/places/boston.jpg",lab:[8,-10,"start"],n:"Boston",lon:-71.06,lat:42.36,note:"Massachusetts Bay Colony, founded by Puritans in 1630.",ne:true},
-    northampton:{img:"./assets/places/northampton.jpg",lab:[-8,20,"middle"],n:"Northampton, MA",lon:-72.64,lat:42.33,note:"Jonathan Edwards' pulpit, 1726–50.",ne:true}
+    northampton:{img:"./assets/places/northampton.jpg",lab:[-8,20,"middle"],n:"Northampton, MA",lon:-72.64,lat:42.33,note:"Jonathan Edwards' pulpit, 1726–50; Northampton revival 1734–35.",ne:true},
+    enfield:{lab:[8,14,"start"],n:"Enfield, CT",lon:-72.59,lat:41.98,note:"Edwards preached 'Sinners in the Hands of an Angry God' here, 8 July 1741.",ne:true}
   },
   people: [
     { id:"wycliffe", n:"John Wycliffe", d:"c. 1330–1384", role:"Oxford scholar", bio:"Attacked church wealth and papal authority and backed translating the Bible into English. Often called the 'Morning Star of the Reformation.'", src:"https://en.wikipedia.org/wiki/John_Wycliffe" },
@@ -131,7 +135,9 @@ window.SOLA = {
     { id:"owen", n:"John Owen", d:"1616–1683", role:"Puritan theologian", bio:"Chaplain to Oliver Cromwell and vice-chancellor of Oxford. Wrote on the atonement, sin, the Holy Spirit and Hebrews.", src:"https://en.wikipedia.org/wiki/John_Owen_(theologian)" },
     { id:"bunyan", n:"John Bunyan", d:"1628–1688", role:"Preacher & author", bio:"Tinker turned Baptist preacher, imprisoned for about twelve years for unlicensed preaching. Wrote The Pilgrim's Progress.", src:"https://en.wikipedia.org/wiki/John_Bunyan" },
     { id:"henry", n:"Matthew Henry", d:"1662–1714", role:"Nonconformist commentator", bio:"Presbyterian minister in Chester and Hackney best known for his devotional Exposition of the Old and New Testaments.", src:"https://en.wikipedia.org/wiki/Matthew_Henry" },
-    { id:"edwards", n:"Jonathan Edwards", d:"1703–1758", role:"American theologian", bio:"Pastor in Northampton, Massachusetts and a leading figure in the Great Awakening. Briefly president of the College of New Jersey (Princeton).", src:"https://en.wikipedia.org/wiki/Jonathan_Edwards" }
+    { id:"edwards", n:"Jonathan Edwards", d:"1703–1758", role:"American theologian", bio:"Pastor in Northampton, Massachusetts and a leading figure in the Great Awakening. Briefly president of the College of New Jersey (Princeton).", src:"https://en.wikipedia.org/wiki/Jonathan_Edwards" },
+    { id:"tennent", n:"Gilbert Tennent", d:"1703–1764", role:"Presbyterian revivalist", bio:"Scotch-Irish Presbyterian and a leader of the Great Awakening. His sermon 'The Danger of an Unconverted Ministry' helped split the Old Side and New Side.", src:"https://en.wikipedia.org/wiki/Gilbert_Tennent" },
+    { id:"whitefield", n:"George Whitefield", d:"1714–1770", role:"Evangelist", bio:"Anglican open-air preacher whose American tours of 1739–40 spread the Great Awakening from Philadelphia to Boston.", src:"https://en.wikipedia.org/wiki/George_Whitefield" }
   ],
   books: [
     { t:"Institutes of the Christian Religion", a:"John Calvin", y:"1536; final Latin ed. 1559", cat:"theology", c:"#1f3a5f", h:250, about:"The most influential systematic theology of the Reformation, arranged around the knowledge of God the Creator and Redeemer.", start:"Start with Book 1 on the knowledge of God and of ourselves.", src:"https://www.ccel.org/ccel/calvin/institutes" },
