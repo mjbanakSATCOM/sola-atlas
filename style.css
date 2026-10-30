@@ -495,3 +495,5 @@ html,body{overflow-x:clip}
  filter:drop-shadow(0 1px 0 rgba(255,236,180,.35)) drop-shadow(0 -1px 0 rgba(0,0,0,.65)) drop-shadow(0 0 1px rgba(0,0,0,.5))}
 #book-card .cover span{font-size:1.12rem;letter-spacing:.02em}
 #book-card .cover small{font-size:.68rem;letter-spacing:.14em}
+/* ornate carved wood frame on all sides */
+.shelves{border:30px solid #3a2414!important;border-image:url(assets/shelf-frame.jpg) 58 round!important;box-shadow:0 30px 60px -20px rgba(0,0,0,.7),inset 0 0 0 2px #1a0e06,inset 0 0 0 4px rgba(190,140,80,.35),inset 0 0 80px rgba(0,0,0,.7)}
