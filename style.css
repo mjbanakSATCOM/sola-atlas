@@ -278,7 +278,7 @@ h2{font-size:clamp(2rem,4.5vw,3.1rem);letter-spacing:-.01em}h3{font-size:1.5rem}
 /* ===== HERO DRAFT (motion) — begin ===== */
 .hero{min-height:92vh;isolation:isolate}
 .hero-art{position:absolute;inset:0;overflow:hidden}
-.hero-art img{position:absolute;inset:-6% 0 -6% 25%;width:75%;height:112%;will-change:transform;transform:translate3d(0,var(--hp,0px),0) scale(1.08);animation:heroDrift 28s ease-in-out infinite alternate}
+.hero-art img{position:absolute;inset:-6% 4% -6% 21%;width:75%;height:112%;will-change:transform;transform:translate3d(0,var(--hp,0px),0) scale(1.08);animation:heroDrift 28s ease-in-out infinite alternate}
 @keyframes heroDrift{from{object-position:45% 40%}to{object-position:60% 55%}}
 .hero-art::before{background:linear-gradient(90deg,var(--ink) 0%,var(--ink) 28%,rgba(20,32,28,.8) 42%,rgba(20,32,28,.2) 65%,rgba(123,34,48,.28))}
 .hero-art::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 65% 45%,transparent 35%,rgba(10,16,14,.75) 100%),linear-gradient(0deg,var(--ink),transparent 30%)}
