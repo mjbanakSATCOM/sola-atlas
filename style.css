@@ -522,6 +522,7 @@ html,body{overflow-x:clip}
 #reformation{--bg:none}
 #reformation.ref-hero{isolation:isolate}
 #reformation .ref-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+#reformation .ref-bg-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
 #reformation .ref-bg-video{position:sticky;top:0;display:block;width:100%;height:100vh;height:100svh;object-fit:cover;object-position:center center}
 #reformation .wrap.ref-intro{max-width:min(860px,68vw);margin-inline:auto}
 #reformation .ref-grid{max-width:100%}
