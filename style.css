@@ -515,7 +515,7 @@ html,body{overflow-x:clip}
 .ref-hero .head .ref-motto-en{font:italic clamp(1.1rem,2.5vw,1.6rem)/1.3 var(--f-display);color:var(--brass);letter-spacing:.06em;margin:-.2em 0 1rem}
 #shelf{--bg:none}
 #shelf.sec.dark.ink::before{z-index:0;background-image:linear-gradient(rgba(20,32,28,.72),rgba(10,16,14,.84))}
-#shelf .shelf-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;z-index:-1;pointer-events:none}
+#shelf .shelf-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:82% center;z-index:-1;pointer-events:none}
 #shelf>.wrap{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){#shelf .shelf-bg-video{display:none}#shelf{--bg:url(assets/bg/bg-shelf.jpg)}#shelf.sec.dark.ink::before{background-image:linear-gradient(rgba(20,32,28,.88),rgba(10,16,14,.94)),var(--bg)}}
 
