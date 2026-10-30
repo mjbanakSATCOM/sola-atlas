@@ -473,7 +473,6 @@ html,body{overflow-x:clip}
 @media (prefers-reduced-motion:reduce){.spine .spk{display:none}}
 
 /* tulips resting on top of Shelf I */
-.shelf-tulips{position:absolute;left:4%;right:4%;top:-12px;height:34px;pointer-events:none;z-index:5}
-.shelf-tulips .tulip{position:absolute;width:clamp(70px,11vw,130px);filter:drop-shadow(0 4px 3px rgba(0,0,0,.55))}
-.shelf-tulips svg{display:block;width:100%;height:auto}
-@media (max-width:640px){.shelf-tulips{top:-8px}.shelf-tulips .tulip{width:56px}}
+.shelf-tulips{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(100% - 22px);width:min(30%,270px);pointer-events:none;z-index:5}
+.shelf-tulips img{display:block;width:100%;height:auto;filter:drop-shadow(0 5px 4px rgba(0,0,0,.5)) saturate(.95);user-select:none}
+@media (max-width:640px){.shelf-tulips{width:70%}}
