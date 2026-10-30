@@ -21,5 +21,5 @@
 .hero-theses video{width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:980px){.hero-theses{width:100%;opacity:.18}}
 @media (prefers-reduced-motion: reduce){.hero-theses{display:none}}
-.hero-inner::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 35% 50%,rgba(8,6,4,.74),rgba(8,6,4,.5) 62%,transparent 94%)}
+.hero-inner::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 35% 50%,rgba(8,6,4,.37),rgba(8,6,4,.25) 62%,transparent 94%)}
 .hero-inner h1,.hero-inner p{text-shadow:0 2px 12px rgba(0,0,0,.75),0 1px 2px rgba(0,0,0,.6)}
