@@ -14,7 +14,7 @@
     var top=document.querySelector('.topbar');
     if(!sessionStorage.getItem('rdDismissed')){
       var b=document.createElement('div');b.className='rd-banner';b.setAttribute('role','region');b.setAttribute('aria-label','Reformation Day');
-      b.innerHTML='<span>✦ <strong>October 31 · Reformation Day</strong> — commemorating October 31, 1517 · '+(new Date().getFullYear()-1517)+' years since the Ninety-Five Theses</span><em lang="la">Post tenebras lux · After darkness, light</em><a href="#reformation">Begin with the Reformation</a><button class="rd-x" aria-label="Dismiss">×</button>';
+      b.innerHTML='<span>✦ <strong>October 31 · Reformation Day</strong> — commemorating October 31, 1517 · '+(new Date().getFullYear()-1517)+' years since the Ninety-Five Theses</span><em><span class="rd-fire" lang="la">Post tenebras lux</span> · After darkness, light</em><a href="#reformation">Begin with the Reformation</a><button class="rd-x" aria-label="Dismiss">×</button>';
       b.querySelector('.rd-x').onclick=function(){sessionStorage.setItem('rdDismissed','1');b.remove()};
       if(top)top.parentNode.insertBefore(b,top);else document.body.prepend(b);
       exists('./assets/refday-banner.png?v=1',function(ok){if(ok)b.classList.add('rd-img')});
@@ -26,6 +26,9 @@
     if(hero){var l=document.createElement('div');l.className='rd-hero-layer';l.setAttribute('aria-hidden','true');hero.appendChild(l)}
     var h=document.querySelector('#reformation .head .kicker');
     if(h){var c=document.createElement('span');c.className='rd-chip';c.textContent='October 31 · Reformation Day';h.appendChild(c)}
+    function fire(el){if(!el||el.dataset.rdFire)return;el.dataset.rdFire='1';el.classList.add('rd-fire');var t=el.textContent;el.setAttribute('aria-label',t);el.innerHTML=t.split('').map(function(ch,i){return '<span aria-hidden="true" style="--i:'+i+'">'+(ch===' '?'&nbsp;':ch)+'</span>'}).join('')}
+    document.querySelectorAll('.rd-banner .rd-fire,#reformation .head h2,#reformation em').forEach(function(e){if(/tenebras/i.test(e.textContent))fire(e)});
+    if(!document.querySelector('.rd-spook')){var sp=document.createElement('div');sp.className='rd-spook';sp.setAttribute('aria-hidden','true');sp.innerHTML='<i class="fog f1"></i><i class="fog f2"></i><i class="ember e1"></i><i class="ember e2"></i><i class="ember e3"></i><i class="ember e4"></i><i class="ember e5"></i><i class="ember e6"></i>';document.body.appendChild(sp)}
     var mottos=['Wittenberg','Ninety-Five Theses','Post tenebras lux','Sola Scriptura','Sola Fide','Sola Gratia','Solus Christus','Soli Deo Gloria'];
     var cols=['#c9a24a','#f4ead2','#8fa6c9','#e8c46a','#1d2f4a'];
     var flags='';for(var i=0;i<60;i++){var x=i*40;flags+='<path d="M'+x+' 6 L'+(x+40)+' 6 L'+(x+20)+' 50 Z" fill="'+cols[i%5]+'" stroke="#14201c" stroke-opacity=".35"/>'}

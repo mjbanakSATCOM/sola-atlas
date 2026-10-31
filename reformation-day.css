@@ -49,3 +49,26 @@ html.refday .rd-letters span::before{content:"";position:absolute;top:-24px;left
 html.refday .rd-letters .gap{width:clamp(6px,1.4vw,18px)}
 @keyframes rd-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
 @media (prefers-reduced-motion:reduce){html.refday .rd-letters span{animation:none}}
+
+/* v9 spooky Reformation night */
+.rd-spook{display:none}
+html.refday .rd-spook{display:block;position:fixed;inset:0;pointer-events:none;z-index:140;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,transparent 45%,rgba(6,10,18,.55) 100%);animation:rd-candle 7s ease-in-out infinite}
+html.refday .rd-spook .fog{position:absolute;left:-20%;width:140%;height:45%;bottom:-10%;background:radial-gradient(ellipse at 30% 60%,rgba(190,200,215,.10),transparent 60%),radial-gradient(ellipse at 75% 50%,rgba(170,185,205,.08),transparent 55%);filter:blur(8px);animation:rd-fog 38s linear infinite alternate}
+html.refday .rd-spook .f2{bottom:auto;top:-10%;opacity:.6;animation-duration:52s;animation-direction:alternate-reverse}
+html.refday .rd-spook .ember{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#ffb347;box-shadow:0 0 8px 2px rgba(255,140,40,.7);opacity:0;animation:rd-ember 11s linear infinite}
+html.refday .rd-spook .e1{left:8%}html.refday .rd-spook .e2{left:23%;animation-delay:3s}html.refday .rd-spook .e3{left:47%;animation-delay:6s}html.refday .rd-spook .e4{left:66%;animation-delay:1.5s}html.refday .rd-spook .e5{left:82%;animation-delay:8s}html.refday .rd-spook .e6{left:94%;animation-delay:4.5s}
+html.refday body{background-color:#0d1219}
+html.refday .sec[id]{box-shadow:inset 0 30px 60px -30px rgba(0,0,0,.55),inset 0 -30px 60px -30px rgba(0,0,0,.55)}
+html.refday #top{filter:saturate(.85) contrast(1.05)}
+html.refday #top::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at 50% 40%,transparent 40%,rgba(5,9,16,.6) 100%),linear-gradient(0deg,rgba(150,165,190,.12),transparent 35%)}
+@keyframes rd-candle{0%,100%{opacity:1}40%{opacity:.88}45%{opacity:.97}70%{opacity:.9}}
+@keyframes rd-fog{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+@keyframes rd-ember{0%{transform:translate(0,0);opacity:0}10%{opacity:.9}60%{opacity:.6}100%{transform:translate(30px,-75vh);opacity:0}}
+/* fire-written Post tenebras lux */
+html.refday .rd-fire{font-style:italic;font-weight:700;white-space:nowrap}
+html.refday .rd-fire span{display:inline-block;color:#ffd27a;opacity:0;text-shadow:0 0 4px #fff2c0,0 -2px 8px #ffae3b,0 -5px 14px #ff6a00,0 -9px 22px rgba(200,40,0,.7);animation:rd-ignite .5s ease-out calc(var(--i)*.09s) forwards,rd-flame 1.6s ease-in-out calc(var(--i)*.09s + .5s) infinite}
+html.refday .rd-banner .rd-fire{font-size:1.15em}
+html.refday #reformation .head h2.rd-fire span{color:#ffe0a0}
+@keyframes rd-ignite{0%{opacity:0;filter:blur(4px);transform:translateY(4px) scale(.8);color:#fff}60%{opacity:1;filter:blur(0);color:#fff4d0}100%{opacity:1;transform:none}}
+@keyframes rd-flame{0%,100%{text-shadow:0 0 4px #fff2c0,0 -2px 8px #ffae3b,0 -5px 14px #ff6a00,0 -9px 22px rgba(200,40,0,.7);transform:translateY(0)}33%{text-shadow:0 0 5px #fff2c0,1px -3px 10px #ffc04d,-1px -7px 18px #ff7a10,1px -12px 26px rgba(220,50,0,.75);transform:translateY(-1px)}66%{text-shadow:0 0 3px #ffe6a0,-1px -2px 7px #ff9a2a,1px -4px 12px #ff5a00,0 -8px 18px rgba(180,30,0,.6);transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){html.refday .rd-spook,html.refday .rd-spook .fog{animation:none}html.refday .rd-spook .ember{display:none}html.refday .rd-fire span{animation:none;opacity:1}}
