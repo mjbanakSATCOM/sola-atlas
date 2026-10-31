@@ -25,9 +25,6 @@ html.refday .rd-sec{position:relative;padding-top:calc(clamp(64px,9vw,110px) + 1
 html.refday .rd-bunting{display:block;position:absolute;left:0;right:0;top:0;height:56px;pointer-events:none;z-index:5;overflow:hidden;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
 html.refday .rd-bunting svg{width:100%;height:56px;display:block}
 html.refday .rd-ribbon{display:block;position:absolute;top:44px;left:50%;transform:translateX(-50%);z-index:6;pointer-events:none;white-space:nowrap;padding:5px 26px;background:linear-gradient(90deg,#c9a24a,#e8c46a,#c9a24a);color:#14201c;font:700 13px/1.2 Georgia,serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 3px 10px rgba(0,0,0,.35);clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
-html.refday #top.rd-sec{padding-top:0}
-html.refday #top .rd-bunting{top:0}
-html.refday #top .rd-ribbon{top:auto;bottom:18px}
 html.refday .rd-sign{top:38px;padding:10px 34px 9px;text-align:center;text-transform:none;letter-spacing:.02em;background:linear-gradient(180deg,#1d2f4a,#14201c);color:#f4ead2;border:2px solid #e8c46a;border-radius:10px;clip-path:none;box-shadow:0 0 0 4px rgba(20,32,28,.55),0 0 22px rgba(232,196,106,.55),0 8px 18px rgba(0,0,0,.4);animation:rd-signglow 4s ease-in-out infinite}
 html.refday .rd-sign::before,html.refday .rd-sign::after{content:"";position:absolute;top:-34px;width:2px;height:34px;background:linear-gradient(#c9a24a,#e8c46a)}
 html.refday .rd-sign::before{left:22px}html.refday .rd-sign::after{right:22px}
@@ -38,7 +35,6 @@ html.refday .rd-glow{position:absolute;inset:0;pointer-events:none;z-index:0;ove
 html.refday .rd-glow::before{content:"";position:absolute;left:50%;top:-80px;width:min(900px,90%);height:420px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 20%,rgba(255,226,150,.30),rgba(232,196,106,.12) 45%,transparent 70%);animation:rd-spot 6s ease-in-out infinite}
 html.refday .rd-glow::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 30%,rgba(232,196,106,.14),transparent 30%),radial-gradient(circle at 92% 60%,rgba(143,166,201,.14),transparent 30%);animation:rd-spot 9s ease-in-out infinite reverse}
 html.refday .rd-sec h2{text-shadow:0 0 22px rgba(232,196,106,.45)}
-html.refday #top .rd-glow{z-index:1}
 @keyframes rd-signglow{0%,100%{box-shadow:0 0 0 4px rgba(20,32,28,.55),0 0 16px rgba(232,196,106,.4),0 8px 18px rgba(0,0,0,.4)}50%{box-shadow:0 0 0 4px rgba(20,32,28,.55),0 0 34px rgba(255,220,130,.85),0 8px 18px rgba(0,0,0,.4)}}
 @keyframes rd-buntglow{0%,100%{filter:drop-shadow(0 3px 4px rgba(0,0,0,.35)) drop-shadow(0 0 2px rgba(232,196,106,.3))}50%{filter:drop-shadow(0 3px 4px rgba(0,0,0,.35)) drop-shadow(0 0 10px rgba(255,220,130,.8))}}
 @keyframes rd-spot{0%,100%{opacity:.65}50%{opacity:1}}

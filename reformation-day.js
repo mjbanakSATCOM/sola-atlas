@@ -30,7 +30,7 @@
     var cols=['#c9a24a','#f4ead2','#8fa6c9','#e8c46a','#1d2f4a'];
     var flags='';for(var i=0;i<60;i++){var x=i*40;flags+='<path d="M'+x+' 6 L'+(x+40)+' 6 L'+(x+20)+' 50 Z" fill="'+cols[i%5]+'" stroke="#14201c" stroke-opacity=".35"/>'}
     var svg='<svg viewBox="0 0 2400 56" preserveAspectRatio="xMinYMin slice" aria-hidden="true"><path d="M0 6 H2400" stroke="#c9a24a" stroke-width="3"/>'+flags+'</svg>';
-    document.querySelectorAll('main section[id], body > section[id], section.sec[id], #top').forEach(function(s,idx){
+    document.querySelectorAll('main section[id], body > section[id], section.sec[id]').forEach(function(s,idx){if(s.id==='top')return;
       if(s.querySelector(':scope > .rd-bunting'))return;
       var d=document.createElement('div');d.className='rd-bunting';d.setAttribute('aria-hidden','true');d.innerHTML=svg;
       var r=document.createElement('div');r.className='rd-ribbon rd-sign';r.setAttribute('aria-hidden','true');r.innerHTML='<b>Happy Reformation Day</b><small>✦ '+mottos[idx%mottos.length]+' · Oct 31, 1517 ✦</small>';var g=document.createElement('div');g.className='rd-glow';g.setAttribute('aria-hidden','true');s.prepend(g);
