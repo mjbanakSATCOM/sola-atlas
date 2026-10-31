@@ -33,7 +33,7 @@
     document.querySelectorAll('main section[id], body > section[id], section.sec[id]').forEach(function(s,idx){if(s.id==='top')return;
       if(s.querySelector(':scope > .rd-bunting'))return;
       var d=document.createElement('div');d.className='rd-bunting';d.setAttribute('aria-hidden','true');d.innerHTML=svg;
-      var r=document.createElement('div');r.className='rd-ribbon rd-sign';r.setAttribute('aria-hidden','true');r.innerHTML='<b>Happy Reformation Day</b><small>✦ '+mottos[idx%mottos.length]+' · Oct 31, 1517 ✦</small>';var g=document.createElement('div');g.className='rd-glow';g.setAttribute('aria-hidden','true');s.prepend(g);
+      var r=document.createElement('div');r.className='rd-letters';r.setAttribute('aria-hidden','true');r.innerHTML='HAPPY REFORMATION DAY'.split('').map(function(ch,i){return ch===' '?'<i class="gap"></i>':'<span style="--d:'+(i%5)*.35+'s">'+ch+'</span>'}).join('');var g=document.createElement('div');g.className='rd-glow';g.setAttribute('aria-hidden','true');s.prepend(g);
       s.classList.add('rd-sec');s.prepend(r);s.prepend(d);
     });
   }
