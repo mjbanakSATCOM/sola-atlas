@@ -20,17 +20,12 @@ html.refday .rd-hero-layer::after{bottom:14px;right:14px;border-left:0;border-to
 html.refday .rd-chip{display:inline-block;margin-left:10px;padding:2px 10px;border-radius:999px;background:linear-gradient(90deg,#c9a24a,#e8c46a);color:#14201c;font-size:.8em;font-weight:700;letter-spacing:.03em}
 html.refday #reformation .head{position:relative}
 html.refday #reformation .head h2{text-shadow:0 0 18px rgba(232,196,106,.45)}
-html.refday .rd-fx{display:block;position:fixed;inset:0;pointer-events:none;z-index:150;overflow:hidden}
-.rd-p{position:absolute;top:-60px;animation:rd-fall linear infinite}
-.rd-scrap{width:34px;height:42px;background:#efe2c0;border:1px solid #c9b383;border-radius:2px;color:#5a4320;font:700 13px Georgia,serif;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,.2);opacity:.85}
-.rd-spark{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#fff6d0,#e8c46a 60%,transparent 70%)}
-.rd-conf{width:8px;height:12px;background:#e8c46a;opacity:.8}
-.rd-sticker{width:72px;height:72px;background:url(./assets/refday-stickers.png?v=1) no-repeat;background-size:220% auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.35))}
-.rd-sticker.s1{background-position:8% 8%}
-.rd-sticker.s2{background-position:92% 8%}
-.rd-sticker.s3{background-position:8% 55%}
-.rd-sticker.s4{background-position:92% 55%}
-.rd-sticker.s5{background-position:50% 95%}
-@keyframes rd-fall{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(110vh) rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.rd-fx{display:none!important}}
-@media (max-width:640px){html.refday .rd-banner{font-size:13px;padding:8px 36px}}
+html.refday .rd-sec{position:relative;padding-top:calc(clamp(64px,9vw,110px) + 52px)}
+.rd-bunting,.rd-ribbon{display:none}
+html.refday .rd-bunting{display:block;position:absolute;left:0;right:0;top:0;height:56px;pointer-events:none;z-index:5;overflow:hidden;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
+html.refday .rd-bunting svg{width:100%;height:56px;display:block}
+html.refday .rd-ribbon{display:block;position:absolute;top:44px;left:50%;transform:translateX(-50%);z-index:6;pointer-events:none;white-space:nowrap;padding:5px 26px;background:linear-gradient(90deg,#c9a24a,#e8c46a,#c9a24a);color:#14201c;font:700 13px/1.2 Georgia,serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 3px 10px rgba(0,0,0,.35);clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
+html.refday #top.rd-sec{padding-top:0}
+html.refday #top .rd-bunting{top:0}
+html.refday #top .rd-ribbon{top:auto;bottom:18px}
+@media (max-width:640px){html.refday .rd-banner{font-size:13px;padding:8px 36px}html.refday .rd-ribbon{font-size:11px;padding:4px 18px}}
