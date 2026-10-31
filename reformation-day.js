@@ -26,7 +26,7 @@
     if(hero){var l=document.createElement('div');l.className='rd-hero-layer';l.setAttribute('aria-hidden','true');hero.appendChild(l)}
     var h=document.querySelector('#reformation .head .kicker');
     if(h){var c=document.createElement('span');c.className='rd-chip';c.textContent='October 31 · Reformation Day';h.appendChild(c)}
-    function fire(el){if(!el||el.dataset.rdFire)return;el.dataset.rdFire='1';el.classList.add('rd-fire');var t=el.textContent;el.setAttribute('aria-label',t);el.innerHTML=t.split('').map(function(ch,i){return '<span aria-hidden="true" style="--i:'+i+'">'+(ch===' '?'&nbsp;':ch)+'</span>'}).join('')}
+    function fire(el){if(!el||el.dataset.rdFire)return;el.dataset.rdFire='1';el.classList.add('rd-fire')}
     document.querySelectorAll('.rd-banner .rd-fire,#reformation .head h2,#reformation em').forEach(function(e){if(/tenebras/i.test(e.textContent))fire(e)});
     if(!document.querySelector('.rd-spook')){var sp=document.createElement('div');sp.className='rd-spook';sp.setAttribute('aria-hidden','true');sp.innerHTML='<i class="fog f1"></i><i class="fog f2"></i><i class="ember e1"></i><i class="ember e2"></i><i class="ember e3"></i><i class="ember e4"></i><i class="ember e5"></i><i class="ember e6"></i>';document.body.appendChild(sp)}
     var mottos=['Wittenberg','Ninety-Five Theses','Post tenebras lux','Sola Scriptura','Sola Fide','Sola Gratia','Solus Christus','Soli Deo Gloria'];

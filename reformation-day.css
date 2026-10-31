@@ -64,11 +64,12 @@ html.refday #top::after{content:"";position:absolute;inset:0;pointer-events:none
 @keyframes rd-candle{0%,100%{opacity:1}40%{opacity:.88}45%{opacity:.97}70%{opacity:.9}}
 @keyframes rd-fog{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
 @keyframes rd-ember{0%{transform:translate(0,0);opacity:0}10%{opacity:.9}60%{opacity:.6}100%{transform:translate(30px,-75vh);opacity:0}}
-/* fire-written Post tenebras lux */
-html.refday .rd-fire{font-style:italic;font-weight:700;white-space:nowrap}
-html.refday .rd-fire span{display:inline-block;color:#ffd27a;opacity:0;text-shadow:0 0 4px #fff2c0,0 -2px 8px #ffae3b,0 -5px 14px #ff6a00,0 -9px 22px rgba(200,40,0,.7);animation:rd-ignite .5s ease-out calc(var(--i)*.09s) forwards,rd-flame 1.6s ease-in-out calc(var(--i)*.09s + .5s) infinite}
-html.refday .rd-banner .rd-fire{font-size:1.15em}
-html.refday #reformation .head h2.rd-fire span{color:#ffe0a0}
-@keyframes rd-ignite{0%{opacity:0;filter:blur(4px);transform:translateY(4px) scale(.8);color:#fff}60%{opacity:1;filter:blur(0);color:#fff4d0}100%{opacity:1;transform:none}}
-@keyframes rd-flame{0%,100%{text-shadow:0 0 4px #fff2c0,0 -2px 8px #ffae3b,0 -5px 14px #ff6a00,0 -9px 22px rgba(200,40,0,.7);transform:translateY(0)}33%{text-shadow:0 0 5px #fff2c0,1px -3px 10px #ffc04d,-1px -7px 18px #ff7a10,1px -12px 26px rgba(220,50,0,.75);transform:translateY(-1px)}66%{text-shadow:0 0 3px #ffe6a0,-1px -2px 7px #ff9a2a,1px -4px 12px #ff5a00,0 -8px 18px rgba(180,30,0,.6);transform:translateY(0)}}
-@media (prefers-reduced-motion:reduce){html.refday .rd-spook,html.refday .rd-spook .fog{animation:none}html.refday .rd-spook .ember{display:none}html.refday .rd-fire span{animation:none;opacity:1}}
+/* fire-written Post tenebras lux v10: smooth whole-phrase flame */
+html.refday .rd-fire{font-family:"Cormorant Garamond","EB Garamond",Georgia,serif;font-style:italic;font-weight:700;letter-spacing:.01em;white-space:nowrap;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;background:linear-gradient(100deg,#ff7a1a 0%,#ffd27a 20%,#fff6dc 30%,#ffb347 42%,#ff6a00 55%,#ffd27a 70%,#fff6dc 80%,#ff8c2a 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 3px rgba(255,200,110,.85)) drop-shadow(0 -2px 10px rgba(255,110,20,.6)) drop-shadow(0 -4px 22px rgba(200,50,0,.45));-webkit-mask-image:linear-gradient(90deg,#000 45%,transparent 55%);mask-image:linear-gradient(90deg,#000 45%,transparent 55%);-webkit-mask-size:240% 100%;mask-size:240% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;animation:rd-write 2.6s cubic-bezier(.4,0,.2,1) .3s forwards,rd-shimmer 5s linear infinite,rd-breathe 3.2s ease-in-out infinite}
+html.refday .rd-banner .rd-fire{font-size:1.3em;line-height:1}
+html.refday #reformation .head h2.rd-fire{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.15;padding:0 .08em}
+html.refday #reformation em.rd-fire{font-size:1.15em}
+@keyframes rd-write{to{-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rd-shimmer{to{background-position:-250% 0}}
+@keyframes rd-breathe{0%,100%{filter:drop-shadow(0 0 3px rgba(255,200,110,.85)) drop-shadow(0 -2px 10px rgba(255,110,20,.6)) drop-shadow(0 -4px 22px rgba(200,50,0,.45))}50%{filter:drop-shadow(0 0 4px rgba(255,215,140,.95)) drop-shadow(0 -3px 14px rgba(255,130,30,.75)) drop-shadow(0 -6px 28px rgba(220,60,0,.55))}}
+@media (prefers-reduced-motion:reduce){html.refday .rd-spook,html.refday .rd-spook .fog{animation:none}html.refday .rd-spook .ember{display:none}html.refday .rd-fire{animation:none;-webkit-mask-image:none;mask-image:none}}
