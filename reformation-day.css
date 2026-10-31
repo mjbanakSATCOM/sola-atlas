@@ -64,12 +64,11 @@ html.refday #top::after{content:"";position:absolute;inset:0;pointer-events:none
 @keyframes rd-candle{0%,100%{opacity:1}40%{opacity:.88}45%{opacity:.97}70%{opacity:.9}}
 @keyframes rd-fog{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
 @keyframes rd-ember{0%{transform:translate(0,0);opacity:0}10%{opacity:.9}60%{opacity:.6}100%{transform:translate(30px,-75vh);opacity:0}}
-/* fire-written Post tenebras lux v10: smooth whole-phrase flame */
-html.refday .rd-fire{font-family:"Cormorant Garamond","EB Garamond",Georgia,serif;font-style:italic;font-weight:700;letter-spacing:.01em;white-space:nowrap;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;background:linear-gradient(100deg,#ff7a1a 0%,#ffd27a 20%,#fff6dc 30%,#ffb347 42%,#ff6a00 55%,#ffd27a 70%,#fff6dc 80%,#ff8c2a 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 3px rgba(255,200,110,.85)) drop-shadow(0 -2px 10px rgba(255,110,20,.6)) drop-shadow(0 -4px 22px rgba(200,50,0,.45));-webkit-mask-image:linear-gradient(90deg,#000 45%,transparent 55%);mask-image:linear-gradient(90deg,#000 45%,transparent 55%);-webkit-mask-size:240% 100%;mask-size:240% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;animation:rd-write 2.6s cubic-bezier(.4,0,.2,1) .3s forwards,rd-shimmer 5s linear infinite,rd-breathe 3.2s ease-in-out infinite}
-html.refday .rd-banner .rd-fire{font-size:1.3em;line-height:1}
-html.refday #reformation .head h2.rd-fire{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.15;padding:0 .08em}
-html.refday #reformation em.rd-fire{font-size:1.15em}
-@keyframes rd-write{to{-webkit-mask-position:0 0;mask-position:0 0}}
-@keyframes rd-shimmer{to{background-position:-250% 0}}
-@keyframes rd-breathe{0%,100%{filter:drop-shadow(0 0 3px rgba(255,200,110,.85)) drop-shadow(0 -2px 10px rgba(255,110,20,.6)) drop-shadow(0 -4px 22px rgba(200,50,0,.45))}50%{filter:drop-shadow(0 0 4px rgba(255,215,140,.95)) drop-shadow(0 -3px 14px rgba(255,130,30,.75)) drop-shadow(0 -6px 28px rgba(220,60,0,.55))}}
-@media (prefers-reduced-motion:reduce){html.refday .rd-spook,html.refday .rd-spook .fog{animation:none}html.refday .rd-spook .ember{display:none}html.refday .rd-fire{animation:none;-webkit-mask-image:none;mask-image:none}}
+/* fire-written Post tenebras lux v10b: smooth whole-phrase flame */
+html.refday .rd-fire{font-family:"Cormorant Garamond","EB Garamond",Georgia,serif;font-style:italic;font-weight:700;letter-spacing:.01em;white-space:nowrap;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;color:#ffe2a8;background:none;text-shadow:0 0 2px #fff4d6,0 0 8px rgba(255,190,90,.9),0 -2px 16px rgba(255,120,20,.7),0 -5px 30px rgba(210,60,0,.5);clip-path:inset(-40% 100% -40% -10%);animation:rd-write 2.4s cubic-bezier(.4,0,.2,1) .3s forwards,rd-breathe 3.4s ease-in-out 2.7s infinite}
+html.refday .rd-banner .rd-fire{font-size:1.3em;line-height:1.1;padding:0 .1em}
+html.refday #reformation .head h2.rd-fire{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.15;padding:0 .1em}
+html.refday #reformation em.rd-fire{font-size:1.15em;color:#c2571a;text-shadow:0 0 6px rgba(255,170,70,.55)}
+@keyframes rd-write{to{clip-path:inset(-40% -10% -40% -10%)}}
+@keyframes rd-breathe{0%,100%{color:#ffe2a8;text-shadow:0 0 2px #fff4d6,0 0 8px rgba(255,190,90,.9),0 -2px 16px rgba(255,120,20,.7),0 -5px 30px rgba(210,60,0,.5)}50%{color:#fff0c8;text-shadow:0 0 3px #fff8e4,0 0 12px rgba(255,205,110,1),0 -3px 22px rgba(255,135,30,.85),0 -7px 40px rgba(225,70,0,.6)}}
+@media (prefers-reduced-motion:reduce){html.refday .rd-spook,html.refday .rd-spook .fog{animation:none}html.refday .rd-spook .ember{display:none}html.refday .rd-fire{animation:none;clip-path:none}}
