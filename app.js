@@ -129,10 +129,15 @@ PATHS.forEach(function(p){var c=el("div",{class:"path"});var h='<h3>'+p.t+'</h3>
 if($("#quiz")){
 /* quiz */
 var qz=$("#quiz"),qi=0,score=0;qz.id="quiz";
-function renderQ(){if(qi>=S.quiz.length){qz.innerHTML='<p class="kicker">Result</p><h3>You scored '+score+' of '+S.quiz.length+'</h3><p>'+(score===S.quiz.length?"Excellent — soli Deo gloria!":"Review the sections linked in the answers and try again.")+'</p><button class="btn" id="q-again">Try again</button>';$("#q-again").onclick=function(){qi=0;score=0;renderQ()};return;}
-  var q=S.quiz[qi];qz.innerHTML='<div class="q-top"><p class="kicker">Question '+(qi+1)+' of '+S.quiz.length+'</p><div class="bar"><i style="width:'+(qi/S.quiz.length*100)+'%"></i></div></div><h3 id="q-h">'+q.q+'</h3><div class="opts" role="group" aria-labelledby="q-h">'+q.o.map(function(o,j){return'<button class="opt" data-j="'+j+'">'+o+'</button>'}).join("")+'</div><p class="fb" aria-live="polite"></p>';
+var quizSets=S.quizSets||[S.quiz];
+var setIdx=Math.floor(Math.random()*quizSets.length);
+var qm=location.search.match(/[?&]quizset=([123])(?:&|$)/);
+if(qm)setIdx=+qm[1]-1;
+var quiz=quizSets[setIdx]||quizSets[0];
+function renderQ(){if(qi>=quiz.length){qz.innerHTML='<p class="kicker">Result</p><h3>You scored '+score+' of '+quiz.length+'</h3><p>'+(score===quiz.length?"Excellent — soli Deo gloria!":"Review the sections linked in the answers and try again.")+'</p><button class="btn" id="q-again">Try again</button>';$("#q-again").onclick=function(){qi=0;score=0;renderQ()};return;}
+  var q=quiz[qi];qz.innerHTML='<div class="q-top"><p class="kicker">Question '+(qi+1)+' of '+quiz.length+'</p><div class="bar"><i style="width:'+(qi/quiz.length*100)+'%"></i></div></div><h3 id="q-h">'+q.q+'</h3><div class="opts" role="group" aria-labelledby="q-h">'+q.o.map(function(o,j){return'<button class="opt" data-j="'+j+'">'+o+'</button>'}).join("")+'</div><p class="fb" aria-live="polite"></p>';
   $$(".opt",qz).forEach(function(b){b.addEventListener("click",function(){var j=+b.dataset.j,ok=j===q.a;if(ok)score++;$$(".opt",qz).forEach(function(x){x.disabled=true;if(+x.dataset.j===q.a)x.classList.add("right")});if(!ok)b.classList.add("wrong");
-    $(".fb",qz).innerHTML=(ok?"✓ Correct. ":"✗ Not quite. ")+q.why+' <a href="'+q.sec+'">Review</a> <button class="btn sm" id="q-next">'+(qi<S.quiz.length-1?"Next":"See result")+'</button>';$("#q-next").onclick=function(){qi++;renderQ()};$("#q-next").focus();})});}
+    $(".fb",qz).innerHTML=(ok?"✓ Correct. ":"✗ Not quite. ")+q.why+' <a href="'+q.sec+'">Review</a> <button class="btn sm" id="q-next">'+(qi<quiz.length-1?"Next":"See result")+'</button>';$("#q-next").onclick=function(){qi++;renderQ()};$("#q-next").focus();})});}
 renderQ();
 }
 
