@@ -598,3 +598,9 @@ html,body{overflow-x:clip}
 .subpage main>.sec:first-child{padding-top:calc(var(--topbar-h,64px) + 2rem)}
 .nav-pages{display:contents}
 .nav-pages a{font-style:italic}
+
+/* Section IV: two doctrinal studies side by side */
+.study-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(20px,3vw,36px);align-items:start}
+.study-pair>article{min-width:0}
+.study-pair h2{font-size:clamp(1.55rem,2.6vw,2.2rem);margin:0 0 .75em;line-height:1.15}
+#election>.wrap>.head{max-width:none;margin-bottom:1.25rem}
