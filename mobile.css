@@ -1,0 +1,88 @@
+/* Reformed Atlas — mobile layout (phones and small tablets only).
+   Every rule sits inside a max-width:768px query, so the desktop layout is untouched. */
+@media (max-width:768px){
+  /* Edge-to-edge sections with one slim gutter */
+  .sec{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+  .wrap{padding-inline:14px}
+  #reformation .wrap.ref-intro{max-width:none}
+
+  /* Type scale */
+  .head{margin-bottom:24px}
+  .head h2{font-size:clamp(2.05rem,9.4vw,2.7rem);line-height:1.06;letter-spacing:-.01em;text-wrap:balance}
+  .head>p{font-size:1.04rem;line-height:1.55}
+  .kicker{letter-spacing:.2em}
+
+  /* Top bar and menu: a big, thumb-friendly grid of sections */
+  .topbar{box-shadow:0 1px 0 rgba(200,165,90,.22)}
+  .nav{gap:8px;padding:12px 0 16px}
+  .nav.open{display:grid;grid-template-columns:1fr 1fr;align-content:start;max-height:calc(100svh - 64px)}
+  .nav a{display:flex;align-items:center;min-height:48px;font-size:1.02rem;padding:10px 14px;border-radius:12px;border:1px solid rgba(200,165,90,.22);background:rgba(255,255,255,.04)}
+
+  /* Hero: Luther at the door fills the top of the screen, the title sits on it */
+  .hero{display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh;min-height:100svh}
+  .hero-art{opacity:.18}
+  .hero-theses{inset:0 0 auto 0;width:100%;height:74svh;opacity:.72;mix-blend-mode:normal;filter:sepia(.25) contrast(1.05);-webkit-mask:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.5) 76%,transparent 100%);mask:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.5) 76%,transparent 100%)}
+  .hero-theses video{object-position:37% center;filter:none;animation:mPanHero 22s ease-in-out infinite alternate}
+  .hero-inner{padding:48svh 18px 44px}
+  .hero-inner::before{background:linear-gradient(180deg,transparent 0,rgba(10,14,12,.55) 46svh,rgba(10,14,12,.6) 100%)}
+  .hero h1{font-size:clamp(3rem,14vw,4.3rem);line-height:.98}
+  .hero .lede{font-size:1.06rem;line-height:1.6}
+  .hero-ctas{display:flex;flex-direction:column;gap:10px}
+  .hero-ctas .btn{width:100%;justify-content:center;text-align:center;min-height:50px;border-radius:999px}
+
+  /* Video sections: the film fills the first screen, the title rests on it, content scrolls over */
+  #reformation,#england,#awakening,#shelf{padding-top:0}
+  #reformation .head,#england>.wrap>.head,#awakening>.wrap>.head,#shelf>.wrap>.head{min-height:calc(100svh - 60px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:10px;margin-bottom:28px}
+  #reformation .head :is(h2,p),#england>.wrap>.head :is(h2,p),#awakening>.wrap>.head :is(h2,p),#shelf>.wrap>.head :is(h2,p){text-shadow:0 2px 14px rgba(0,0,0,.8),0 1px 2px rgba(0,0,0,.6)}
+  #reformation .head>p:not(.kicker):not(.ref-motto-en),#england>.wrap>.head>p:not(.kicker),#awakening>.wrap>.head>p:not(.kicker),#shelf>.wrap>.head>p:not(.kicker){color:#eee6d3}
+
+  #reformation.ref-hero::before{background-image:linear-gradient(180deg,rgba(20,32,28,.05) 0,rgba(20,32,28,.18) 40svh,rgba(20,32,28,.78) 82svh,rgba(20,32,28,.86) 100svh,rgba(20,32,28,.88) 100%)}
+  #reformation .ref-bg-video{object-position:70% center}
+  #england.sec.dark::before{background-image:linear-gradient(180deg,rgba(18,34,68,.05) 0,rgba(18,34,68,.2) 40svh,rgba(16,30,62,.78) 82svh,rgba(16,30,62,.8) 100svh,rgba(16,30,62,.8) 100%)}
+  #england .england-bg-video{object-position:52% center}
+  #awakening.sec.dark::before{background-image:linear-gradient(180deg,rgba(18,34,68,.02) 0,rgba(18,34,68,.15) 40svh,rgba(16,30,62,.78) 82svh,rgba(16,30,62,.8) 100svh,rgba(16,30,62,.8) 100%)}
+  #awakening .awakening-bg-video{object-position:47% 30%}
+  #shelf.sec.dark.ink::before{background-image:linear-gradient(180deg,rgba(20,32,28,.05) 0,rgba(20,32,28,.2) 40svh,rgba(10,16,14,.8) 85svh,rgba(10,16,14,.86) 100%)}
+  #shelf .shelf-bg-video{object-position:15% center;animation:mPanShelf 20s ease-in-out infinite alternate}
+
+  /* Video links: full-width 16:9 cards with a play badge */
+  .vid-pairs{grid-template-columns:1fr;max-width:none;gap:10px}
+  .vid-thumb{position:relative;width:100%;max-width:none;margin-top:10px}
+  .vid-thumb img{width:100%;border-radius:16px;box-shadow:0 18px 40px -18px rgba(0,0,0,.8)}
+  .vid-thumb::after{content:"";position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(20,32,28,.62) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%23f1c97a'/%3E%3C/svg%3E") center/30px no-repeat;border:1px solid rgba(241,201,122,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .vid-pair .btn{max-width:none;border-radius:999px;min-height:48px}
+
+  /* Swipeable card rows (people, places, books, hymns) */
+  .hymn-grid,.marks.scot-places{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:14px;gap:12px;margin-inline:-14px;padding:4px 14px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hymn-grid::-webkit-scrollbar,.marks.scot-places::-webkit-scrollbar{display:none}
+  .hymn-grid>*,.marks.scot-places>*{flex:0 0 84%;scroll-snap-align:start;min-width:0}
+  .hymn-card,.scot-places>div{border-radius:16px}
+
+  /* Horizontal chip and tab rows snap cleanly */
+  .conf-list,.chips{scroll-snap-type:x proximity;scrollbar-width:none}
+  .conf-list li,.chips button{scroll-snap-align:start}
+  .chips button,.conf-list button{min-height:40px}
+
+  /* Bookshelf uses the whole width */
+  .shelves{border-width:16px!important;margin-top:24px}
+
+  /* Comfortable tap targets */
+  .btn,a.btn,button.btn{min-height:46px}
+  .layer summary{min-height:48px}
+  .src,.hymn-src{display:inline-block;padding:6px 0}
+
+  /* Media never overflows */
+  .sec img,.sec video{max-width:100%}
+}
+
+@keyframes mPanHero{from{object-position:30% center}to{object-position:72% center}}
+@keyframes mPanShelf{from{object-position:12% center}to{object-position:82% center}}
+
+/* Scroll-in motion (added by mobile.js; off for reduced motion) */
+@media (max-width:768px) and (prefers-reduced-motion:no-preference){
+  .m-motion .m-rv{opacity:0;translate:0 28px;transition:opacity .7s ease,translate .8s cubic-bezier(.2,.7,.2,1)}
+  .m-motion .m-rv.m-in{opacity:1;translate:none}
+}
+@media (max-width:768px) and (prefers-reduced-motion:reduce){
+  .hero-theses video,#shelf .shelf-bg-video{animation:none}
+}
