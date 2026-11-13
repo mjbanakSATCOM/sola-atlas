@@ -37,7 +37,7 @@
   #reformation .head>p:not(.kicker):not(.ref-motto-en),#england>.wrap>.head>p:not(.kicker),#awakening>.wrap>.head>p:not(.kicker),#shelf>.wrap>.head>p:not(.kicker){color:#eee6d3}
 
   #reformation.ref-hero::before{background-image:linear-gradient(180deg,rgba(20,32,28,.05) 0,rgba(20,32,28,.18) 40svh,rgba(20,32,28,.78) 82svh,rgba(20,32,28,.86) 100svh,rgba(20,32,28,.88) 100%)}
-  #reformation .ref-bg-video{object-position:70% center}
+  #reformation .ref-bg-video{object-position:82% center}
   #england.sec.dark::before{background-image:linear-gradient(180deg,rgba(18,34,68,.05) 0,rgba(18,34,68,.2) 40svh,rgba(16,30,62,.78) 82svh,rgba(16,30,62,.8) 100svh,rgba(16,30,62,.8) 100%)}
   #england .england-bg-video{object-position:52% center}
   #awakening.sec.dark::before{background-image:linear-gradient(180deg,rgba(18,34,68,.02) 0,rgba(18,34,68,.15) 40svh,rgba(16,30,62,.78) 82svh,rgba(16,30,62,.8) 100svh,rgba(16,30,62,.8) 100%)}
